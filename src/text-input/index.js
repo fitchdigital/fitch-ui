@@ -49,7 +49,10 @@ class TextInput extends PureComponent {
     validate = (e) => {
         const { value } = e.target;
 
-        if (this.props.validate) {
+        // validation just happens on non passwords
+        if (
+            !this.props.password &&
+            this.props.validate) {
             const valid = this.props.validate(e.target.value);
             this.setState({
                 valid: value.length > 0 ? valid : null,
@@ -105,16 +108,20 @@ class TextInput extends PureComponent {
                                 <IconEye onClick={this.togglePasswordType} />
                             }
 
-                            { (this.state.valid === true || this.props.success) &&
-                                <IconCheckmark />
-                            }
+                            { !this.props.password &&
+                                <>
+                                { (this.state.valid === true || this.props.success) &&
+                                    <IconCheckmark />
+                                }
 
-                            { (this.state.valid === false || this.props.error) &&
-                                <IconMdClose />
-                            }
+                                { (this.state.valid === false || this.props.error) &&
+                                    <IconMdClose />
+                                }
 
-                            { this.props.progress &&
-                                <Spinner />
+                                { this.props.progress &&
+                                    <Spinner />
+                                }
+                                </>
                             }
                         </div>
                     </div>

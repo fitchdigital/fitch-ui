@@ -1,6 +1,11 @@
 @import '../theme';
 
 .input {
+
+    &.styleguide {
+        pointer-events: none;
+    }
+
     .element {
         position: relative;
         background-color: var(--input-background);
@@ -74,6 +79,14 @@
         .element {
             .icon {
                 fill: var(--core-color-error);
+            }
+        }
+    }
+
+    &.password {
+        .element {
+            .icon {
+                fill: var(--input-color);
             }
         }
     }
