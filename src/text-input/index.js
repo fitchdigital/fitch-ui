@@ -19,7 +19,6 @@ class TextInput extends PureComponent {
         ]),
         placeholder: PropTypes.string,
         defaultValue: PropTypes.string,
-        styleguide: PropTypes.bool,
         password: PropTypes.bool,
         focus: PropTypes.bool,
         disabled: PropTypes.bool,
@@ -67,7 +66,6 @@ class TextInput extends PureComponent {
     render() {
         const classes = classnames({
             input: true,
-            styleguide: !!this.props.styleguide || false,
             password: !!this.props.password,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,

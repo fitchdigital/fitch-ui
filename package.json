@@ -1,16 +1,25 @@
 {
   "name": "@fitch-digital/fitch-ui",
-  "version": "0.0.1",
-  "description": "set of UI elements used across FITCH DIGITAL projects",
+  "version": "0.0.2",
+  "description": "UI Library for Fitch Digital Projects",
+  "author": "FITCH DIGITAL",
   "sideEffects": false,
   "main": "src/index.js",
   "module": "dist/fitch-ui.esm.js",
   "browser": "dist/fitch-ui.umd.js",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fitchdigital/fitch-ui/issues"
+  },
+  "homepage": "https://github.com/fitchdigital/fitch-ui#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fitchdigital/fitch-ui.git"
   },
+  "keywords": [
+    "fitch",
+    "ui"
+  ],
   "contributors": [
     "Andre Venancio <andre.venancio@fitch.com>",
     "Ben Gannaway <ben.gannaway@fitch.com>"
@@ -23,6 +32,7 @@
     "andre": "rollup -c -w",
     "build-storybook": "build-storybook"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
@@ -63,15 +73,5 @@
     "classnames": ">=2.2.6",
     "prop-types": ">=15.7.2",
     "react": ">=16.8.0"
-  },
-  "bugs": {
-    "url": "https://github.com/fitchdigital/fitch-ui/issues"
-  },
-  "homepage": "https://github.com/fitchdigital/fitch-ui#readme",
-  "dependencies": {},
-  "keywords": [
-    "fitch",
-    "ui"
-  ],
-  "author": "FITCH DIGITAL"
+  }
 }
