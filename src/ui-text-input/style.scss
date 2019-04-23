@@ -1,11 +1,6 @@
 @import '../theme';
 
 .input {
-
-    &.styleguide {
-        pointer-events: none;
-    }
-
     .element {
         position: relative;
         background-color: var(--input-background);
