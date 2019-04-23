@@ -4,8 +4,8 @@
     border: var(--spinner-width) solid var(--spinner-color-secondary);
     border-top: var(--spinner-width) solid var(--spinner-color-primary);
     border-radius: 50%;
-    width: 14px; // 100%;
-    height: 14px; // 100%;
+    width: 12px;
+    height: 12px;
     animation: spin 1s linear infinite;
 }
 

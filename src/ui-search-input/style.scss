@@ -1,0 +1,85 @@
+@import '../theme';
+
+.search {
+    position: relative;
+    background-color: var(--search-background);
+    border: 1px solid var(--search-border-color);
+    border-radius: var(--core-border-radius);
+    padding: var(--search-padding);
+    color: var(--search-color);
+    display: flex;
+    align-items: center;
+
+    input {
+        width: calc(100% - 42px);
+        height: 20px;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--search-border-color);
+        }
+    }
+
+    .search-icon {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin-right: var(--search-icon-padding);
+
+        svg {
+            width: 100%;
+            fill: var(--search-icon-color);
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    // disable input when .styleguide class is present
+    &.styleguide {
+        pointer-events: none;
+    }
+
+    &.focus,
+    &:focus-within {
+        border: 1px solid var(--search-border-color-focus);
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: var(--core-opacity-disabled);
+    }
+
+    &.success {
+        .icon {
+            fill: var(--core-color-success);
+        }
+    }
+
+    &.error {
+        .icon {
+            fill: var(--core-color-error);
+        }
+    }
+}

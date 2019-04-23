@@ -16,6 +16,7 @@ storiesOf('TextInput', module)
     .add('interactive', () => (
         <TextInput
             password={boolean('password', false)}
+            progress={boolean('progress', false)}
             disabled={boolean('disabled', false)}
             placeholder={text('placeholder', 'Placeholder')}
             label={text('label', 'A Label:')}
