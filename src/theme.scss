@@ -1,0 +1,91 @@
+// DEFAULT THEME
+:root {
+    // core
+    --core-font-family: sans-serif;
+    --core-font-weight: 200;
+    --core-border-radius: 4px;
+    --core-padding-small: 8px;
+    --core-opacity-disabled: 0.5;
+    --core-color-primary: #3880ff; // blue
+    --core-color-success: #95dcb2; // green
+    --core-color-error: #db7f93; // red
+    --core-color-border: #dddddd; // grey
+
+    // application
+    --container-background: #f4f4f4;
+
+    // sidemenu
+    --sidemenu-background: #ffffff;
+
+    // primary button
+    --button-primary-background: var(--core-color-primary);
+    --button-primary-padding: 8px 16px;
+    --button-primary-color: #ffffff;
+
+    // secondary button
+    --button-secondary-background: transparent;
+    --button-secondary-padding: 8px 16px;
+    --button-secondary-color: #666666;
+
+    // minimal button
+    --button-minimal-background: transparent;
+    --button-minimal-padding: 8px 16px;
+    --button-minimal-color: #666666;
+    --button-minimal-color-focus: #131313;
+
+    // Input Fields
+    --input-background: #ffffff;
+    --input-background-disabled: #fcfcfc;
+    --input-border-color: #dddddd;
+    --input-border-color-focus: #888888;
+    --input-color: #666666;
+    --input-padding: 8px 16px;
+    --input-label: #666666;
+
+    // Search Input Field
+    --search-background: #ffffff;
+    --search-background-disabled: #fcfcfc;
+    --search-border-color: #dddddd;
+    --search-border-color-focus: #888888;
+    --search-color: #666666;
+    --search-padding: 8px 16px;
+    --search-icon-color: #dddddd;
+    --search-icon-padding: 8px;
+
+    // spinner
+    --spinner-color-primary: var(--core-color-primary);
+    --spinner-color-secondary: #dddddd;
+    --spinner-width: 2px;
+
+    // radio
+    --radio-background: #ffffff;
+    --radio-background-checked: var(--core-color-primary);
+    --radio-border-color: #dddddd;
+    --radio-border-color-focus: #888888;
+    --radio-indicator: #dddddd;
+    --radio-indicator--checked: #ffffff;
+    --radio-label: #666666;
+
+    // checkbox
+    --checkbox-background: #ffffff;
+    --checkbox-background-checked: var(--core-color-primary);
+    --checkbox-border-color: #dddddd;
+    --checkbox-border-color-focus: #888888;
+    --checkbox-indicator: #dddddd;
+    --checkbox-indicator--checked: #ffffff;
+    --checkbox-label: #666666;
+
+    // switch
+    --switch-background: #ffffff;
+    --switch-background-checked: var(--core-color-primary);
+    --switch-border-color: #dddddd;
+    --switch-border-color-focus: #888888;
+    --switch-indicator: #dddddd;
+    --switch-indicator--checked: #ffffff;
+    --switch-label: #666666;
+}
+
+// DARK THEME (example)
+body.dark {
+    --sidemenu-background: #333333;
+}
