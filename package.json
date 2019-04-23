@@ -1,6 +1,6 @@
 {
 	"name": "@fitch-digital/fitch-ui",
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"description": "set of UI elements used across FITCH DIGITAL projects",
 	"sideEffects": false,
 	"main": "src/index.js",
