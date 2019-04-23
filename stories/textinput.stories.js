@@ -9,16 +9,21 @@ const testValidate = value => value.length > 3;
 storiesOf('TextInput', module)
     .addDecorator(withKnobs)
     .add('default', () => (
-        <TextInput placeholder="Placeholder" />
-    ))
-    .add('with validation', () => (
-        <TextInput placeholder="Placeholder" validate={testValidate} />
+        <TextInput
+            placeholder="Placeholder"
+        />
     ))
     .add('interactive', () => (
         <TextInput
-            placeholder={text('placeholder', 'Placeholder')}
-            label={text('label', 'A Label:')}
             password={boolean('password', false)}
             disabled={boolean('disabled', false)}
+            placeholder={text('placeholder', 'Placeholder')}
+            label={text('label', 'A Label:')}
         />
-    ));
+    ))
+    .add('has validation', () => (
+        <TextInput
+            placeholder="Placeholder"
+            validate={testValidate}
+        />
+    ))
