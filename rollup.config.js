@@ -7,7 +7,7 @@ const pkg = require('./package.json');
 const license = require('./license-template');
 
 const input = './src/index.js';
-const name = '@fitchdigital/fitch-ui';
+const name = '@fitch-digital/fitch-ui';
 
 const bannerPlugin = {
     banner: `/*!

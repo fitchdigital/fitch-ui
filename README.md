@@ -1,4 +1,4 @@
-@fitchdigital/fitch-ui
+@fitch-digital/fitch-ui
 ======
 
 ## develop
