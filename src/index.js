@@ -1,5 +1,6 @@
 export * from './ui-button';
 export * from './ui-checkbox';
+export * from './ui-padding';
 export * from './ui-radio';
 export * from './ui-search-input';
 export * from './ui-spacer';

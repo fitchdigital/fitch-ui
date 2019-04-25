@@ -1,3 +1,6 @@
+$core-breakpoint-medium: 768px;
+$core-breakpoint-large: 1024px;
+
 :root {
     // core
     --core-font-family: sans-serif;
@@ -79,4 +82,9 @@
     --spacer-small: 20px;
     --spacer-medium: 40px;
     --spacer-large: 60px;
+
+    // padding
+    --padding-small: 20px;
+    --padding-medium: 40px;
+    --padding-large: 60px;
 }
