@@ -4,47 +4,31 @@ import classnames from 'classnames';
 
 import { Spinner } from '../spinner';
 import IconSearch from '../svg/icon-search';
-
+import { excludeFactoryProps } from '../utils';
 import './style.scss';
 
 export class SearchInput extends PureComponent {
 
     static propTypes = {
+        defaultValue: PropTypes.string,
+        disabled: PropTypes.bool,
+        focus: PropTypes.bool,
+        onChange: PropTypes.func,
+        placeholder: PropTypes.string,
+        progress: PropTypes.bool,
         type: PropTypes.oneOf([
             'text',
             'number',
         ]),
-        placeholder: PropTypes.string,
-        defaultValue: PropTypes.string,
-        focus: PropTypes.bool,
-        disabled: PropTypes.bool,
-        progress: PropTypes.bool,
-        success: PropTypes.bool,
-        error: PropTypes.bool,
-        onChange: PropTypes.func,
-        validate: PropTypes.func,
     }
 
     static defaultProps = {
         type: 'text',
     }
 
-    state = {
-        valid: null,
-    }
-
-    validate = (e) => {
-        const { value } = e.target;
-
-        if (this.props.validate) {
-            const valid = this.props.validate(e.target.value);
-            this.setState({
-                valid: value.length > 0 ? valid : null,
-            });
-        }
-
+    handleChange = (e) => {
         if (this.props.onChange) {
-            this.props.onChange(e.target.value);
+            this.props.onChange(e);
         }
     }
 
@@ -53,9 +37,17 @@ export class SearchInput extends PureComponent {
             search: true,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,
-            success: this.state.valid === true || !!this.props.success,
-            error: this.state.valid === false || !!this.props.error,
         });
+
+        const props = excludeFactoryProps([
+            'defaultValue',
+            'disabled',
+            'focus',
+            'onChange',
+            'placeholder',
+            'progress',
+            'type',
+        ], this.props);
 
         return (
             <div className={classes}>
@@ -68,7 +60,8 @@ export class SearchInput extends PureComponent {
                     placeholder={this.props.placeholder}
                     defaultValue={this.props.defaultValue}
                     disabled={!!this.props.disabled}
-                    onChange={this.validate}
+                    onChange={this.handleChange}
+                    {...props}
                 />
 
                 <div className="icon">

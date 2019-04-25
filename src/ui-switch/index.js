@@ -2,14 +2,15 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { excludeFactoryProps } from '../utils';
 import './style.scss';
 
 export class Switch extends PureComponent {
 
     static propTypes = {
         checked: PropTypes.bool,
-        focus: PropTypes.bool,
         disabled: PropTypes.bool,
+        focus: PropTypes.bool,
         label: PropTypes.string,
         onChange: PropTypes.func,
     }
@@ -18,14 +19,14 @@ export class Switch extends PureComponent {
         checked: !!this.props.checked,
     }
 
-    onChange = () => {
-        if (this.props.onChange) {
-            this.props.onChange(!this.state.checked);
-        }
-
+    handleChange = (e) => {
         this.setState(prevState => ({
             checked: !prevState.checked,
         }));
+
+        if (this.props.onChange) {
+            this.props.onChange(e);
+        }
     }
 
     render() {
@@ -36,6 +37,15 @@ export class Switch extends PureComponent {
             checked: this.state.checked,
         });
 
+        const props = excludeFactoryProps([
+            'checked',
+            'disabled',
+            'focus',
+            'label',
+            'onChange',
+            'type',
+        ], this.props);
+
         return (
             <div className={classes}>
                 <label>
@@ -43,8 +53,9 @@ export class Switch extends PureComponent {
                         <input
                             type="checkbox"
                             checked={this.state.checked}
-                            onChange={this.onChange}
+                            onChange={this.handleChange}
                             disabled={!!this.props.disabled}
+                            {...props}
                         />
                         <span />
                     </div>

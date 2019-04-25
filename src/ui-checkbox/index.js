@@ -3,26 +3,31 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import IconCheckmark from '../svg/icon-checkmark';
-
+import { excludeFactoryProps } from '../utils';
 import './style.scss';
 
 export class Checkbox extends PureComponent {
 
     static propTypes = {
         checked: PropTypes.bool,
-        focus: PropTypes.bool,
         disabled: PropTypes.bool,
+        focus: PropTypes.bool,
         label: PropTypes.string,
+        onChange: PropTypes.func,
     }
 
     state = {
         checked: !!this.props.checked,
     }
 
-    onChange = () => {
+    handleChange = (e) => {
         this.setState(prevState => ({
             checked: !prevState.checked,
         }));
+
+        if (this.props.onChange) {
+            this.props.onChange(e);
+        }
     }
 
     render() {
@@ -33,6 +38,15 @@ export class Checkbox extends PureComponent {
             checked: this.state.checked,
         });
 
+        const props = excludeFactoryProps([
+            'checked',
+            'disabled',
+            'focus',
+            'label',
+            'onChange',
+            'type',
+        ], this.props);
+
         return (
             <div className={classes}>
                 <label>
@@ -40,8 +54,9 @@ export class Checkbox extends PureComponent {
                         <input
                             type="checkbox"
                             checked={this.state.checked}
-                            onChange={this.onChange}
+                            onChange={this.handleChange}
                             disabled={!!this.props.disabled}
+                            {...props}
                         />
                         <IconCheckmark />
                     </div>
