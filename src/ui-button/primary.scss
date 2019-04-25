@@ -1,0 +1,50 @@
+@import '../styles/theme';
+
+.button.primary {
+    position: relative;
+    color: var(--button-primary-color);
+    padding: var(--button-primary-padding);
+    background-color: var(--button-primary-background);
+    border-radius: var(--core-border-radius);
+    border: 1px solid transparent;
+
+    // this allows more flexibility in the
+    // theme colours. Having one main colour
+    // that gets tinted is better than having multiple
+    // colours.
+    &:before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        border-radius: var(--core-border-radius);
+        background-color: #000000;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        z-index: 0;
+    }
+
+    &.hover:not(.active) {
+        &:before {
+            opacity: 0.08;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover:not(.active) {
+            &:before {
+                opacity: 0.08;
+            }
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: var(--core-opacity-disabled);
+    }
+
+    &.active {
+    }
+}

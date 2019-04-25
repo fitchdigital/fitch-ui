@@ -1,4 +1,4 @@
-@import '../theme';
+@import '../styles/theme';
 
 .input {
     .element {
@@ -10,6 +10,7 @@
         color: var(--input-color);
 
         input {
+            font-family: var(--core-font-family);
             width: calc(100% - 16px);
             height: 20px;
             border: 0;
@@ -43,6 +44,7 @@
     }
 
     .label {
+        font-family: var(--core-font-family);
         margin-bottom: 0.5rem;
         color: var(--input-label);
     }

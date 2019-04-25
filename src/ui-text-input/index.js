@@ -7,27 +7,27 @@ import IconEye from '../svg/icon-eye';
 import IconEyeOff from '../svg/icon-eye-off';
 import IconCheckmark from '../svg/icon-checkmark';
 import IconMdClose from '../svg/icon-close';
-
+import { excludeFactoryProps } from '../utils';
 import './style.scss';
 
-class TextInput extends PureComponent {
+export class TextInput extends PureComponent {
 
     static propTypes = {
+        defaultValue: PropTypes.string,
+        disabled: PropTypes.bool,
+        error: PropTypes.bool,
+        focus: PropTypes.bool,
+        label: PropTypes.string,
+        onChange: PropTypes.func,
+        password: PropTypes.bool,
+        placeholder: PropTypes.string,
+        progress: PropTypes.bool,
+        success: PropTypes.bool,
         type: PropTypes.oneOf([
             'text',
             'number',
         ]),
-        placeholder: PropTypes.string,
-        defaultValue: PropTypes.string,
-        password: PropTypes.bool,
-        focus: PropTypes.bool,
-        disabled: PropTypes.bool,
-        progress: PropTypes.bool,
-        success: PropTypes.bool,
-        error: PropTypes.bool,
-        onChange: PropTypes.func,
         validate: PropTypes.func,
-        label: PropTypes.string,
     }
 
     static defaultProps = {
@@ -45,21 +45,21 @@ class TextInput extends PureComponent {
         }));
     }
 
-    validate = (e) => {
+    handleChange = (e) => {
         const { value } = e.target;
 
         // validation just happens on non passwords
         if (
             !this.props.password &&
             this.props.validate) {
-            const valid = this.props.validate(e.target.value);
+            const valid = this.props.validate(value);
             this.setState({
                 valid: value.length > 0 ? valid : null,
             });
         }
 
         if (this.props.onChange) {
-            this.props.onChange(e.target.value);
+            this.props.onChange(e);
         }
     }
 
@@ -79,6 +79,20 @@ class TextInput extends PureComponent {
             type = 'password';
         }
 
+        const props = excludeFactoryProps([
+            'defaultValue',
+            'disabled',
+            'error',
+            'focus',
+            'label',
+            'onChange',
+            'password',
+            'placeholder',
+            'progress',
+            'success',
+            'type',
+        ], this.props);
+
         return (
             <div className={classes}>
                 <label>
@@ -94,7 +108,8 @@ class TextInput extends PureComponent {
                             placeholder={this.props.placeholder}
                             defaultValue={this.props.defaultValue}
                             disabled={!!this.props.disabled}
-                            onChange={this.validate}
+                            onChange={this.handleChange}
+                            {...props}
                         />
 
                         <div className="icon">
@@ -108,17 +123,17 @@ class TextInput extends PureComponent {
 
                             { !this.props.password &&
                                 <>
-                                { (this.state.valid === true || this.props.success) &&
-                                    <IconCheckmark />
-                                }
+                                    { (this.state.valid === true || this.props.success) &&
+                                        <IconCheckmark />
+                                    }
 
-                                { (this.state.valid === false || this.props.error) &&
-                                    <IconMdClose />
-                                }
+                                    { (this.state.valid === false || this.props.error) &&
+                                        <IconMdClose />
+                                    }
 
-                                { this.props.progress &&
-                                    <Spinner />
-                                }
+                                    { this.props.progress &&
+                                        <Spinner />
+                                    }
                                 </>
                             }
                         </div>
@@ -128,7 +143,3 @@ class TextInput extends PureComponent {
         );
     }
 }
-
-export {
-    TextInput,
-};

@@ -1,0 +1,29 @@
+@import '../styles/theme';
+
+.button.minimal {
+    position: relative;
+    color: var(--button-minimal-color);
+    padding: var(--button-minimal-padding);
+    background-color: var(--button-minimal-background);
+    border-radius: var(--core-border-radius);
+    border: 1px solid transparent;
+
+    &.hover {
+        color: var(--button-minimal-color-focus);
+    }
+
+    @media (hover: hover) {
+        &:hover:not(.active) {
+            color: var(--button-minimal-color-focus);
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: var(--core-opacity-disabled);
+    }
+
+    &.active {
+        color: var(--button-minimal-color-focus);
+    }
+}

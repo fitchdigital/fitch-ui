@@ -2,25 +2,31 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { excludeFactoryProps } from '../utils';
 import './style.scss';
 
 export class Radio extends PureComponent {
 
     static propTypes = {
         checked: PropTypes.bool,
-        focus: PropTypes.bool,
         disabled: PropTypes.bool,
+        focus: PropTypes.bool,
         label: PropTypes.string,
+        onChange: PropTypes.func,
     }
 
     state = {
         checked: !!this.props.checked,
     }
 
-    onChange = () => {
+    onChange = (e) => {
         this.setState(prevState => ({
             checked: !prevState.checked,
         }));
+
+        if (this.props.onChange) {
+            this.props.onChange(e);
+        }
     }
 
     render() {
@@ -31,6 +37,15 @@ export class Radio extends PureComponent {
             checked: this.state.checked,
         });
 
+        const props = excludeFactoryProps([
+            'checked',
+            'disabled',
+            'focus',
+            'label',
+            'onChange',
+            'type',
+        ], this.props);
+
         return (
             <div className={classes}>
                 <label>
@@ -40,6 +55,7 @@ export class Radio extends PureComponent {
                             checked={this.state.checked}
                             onChange={this.onChange}
                             disabled={!!this.props.disabled}
+                            {...props}
                         />
                         <span />
                     </div>
