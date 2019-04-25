@@ -1,21 +1,15 @@
-// DEFAULT THEME
+$core-breakpoint-medium: 768px;
+$core-breakpoint-large: 1024px;
+
 :root {
     // core
     --core-font-family: sans-serif;
-    --core-font-weight: 200;
     --core-border-radius: 4px;
-    --core-padding-small: 8px;
     --core-opacity-disabled: 0.5;
     --core-color-primary: #3880ff; // blue
     --core-color-success: #95dcb2; // green
     --core-color-error: #db7f93; // red
     --core-color-border: #dddddd; // grey
-
-    // application
-    --container-background: #f4f4f4;
-
-    // sidemenu
-    --sidemenu-background: #ffffff;
 
     // primary button
     --button-primary-background: var(--core-color-primary);
@@ -83,9 +77,14 @@
     --switch-indicator: #dddddd;
     --switch-indicator--checked: #ffffff;
     --switch-label: #666666;
-}
 
-// DARK THEME (example)
-body.dark {
-    --sidemenu-background: #333333;
+    // spacer
+    --spacer-small: 20px;
+    --spacer-medium: 40px;
+    --spacer-large: 60px;
+
+    // padding
+    --padding-small: 20px;
+    --padding-medium: 40px;
+    --padding-large: 60px;
 }

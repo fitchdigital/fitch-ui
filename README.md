@@ -10,3 +10,8 @@ npm start
 ```bash
 npm run build
 ```
+
+## publish
+```bash
+npm publish --access public
+```
