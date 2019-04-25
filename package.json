@@ -29,8 +29,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "del dist && rollup -c",
     "start": "npm run storybook",
-    "andre": "rollup -c -w",
-    "build-storybook": "build-storybook"
+    "build-storybook": "del docs && build-storybook -o ./docs"
   },
   "dependencies": {},
   "devDependencies": {
