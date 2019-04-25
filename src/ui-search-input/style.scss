@@ -1,4 +1,4 @@
-@import '../theme';
+@import '../styles/theme';
 
 .search {
     position: relative;
@@ -56,11 +56,6 @@
         }
     }
 
-    // disable input when .styleguide class is present
-    &.styleguide {
-        pointer-events: none;
-    }
-
     &.focus,
     &:focus-within {
         border: 1px solid var(--search-border-color-focus);
@@ -69,17 +64,5 @@
     &.disabled {
         pointer-events: none;
         opacity: var(--core-opacity-disabled);
-    }
-
-    &.success {
-        .icon {
-            fill: var(--core-color-success);
-        }
-    }
-
-    &.error {
-        .icon {
-            fill: var(--core-color-error);
-        }
     }
 }
