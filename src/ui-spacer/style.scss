@@ -1,0 +1,19 @@
+@import '../theme';
+
+.spacer {
+    &.small {
+        height: var(--spacer-small);
+    }
+
+    &.medium {
+        height: var(--spacer-medium);
+    }
+
+    &.large {
+        height: var(--spacer-large);
+    }
+
+    &.debug {
+        background-color: rgba(0, 255, 255, 0.3);
+    }
+}
