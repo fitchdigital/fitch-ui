@@ -14,6 +14,7 @@ export class Checkbox extends PureComponent {
         focus: PropTypes.bool,
         label: PropTypes.string,
         onChange: PropTypes.func,
+        error: PropTypes.string,
     }
 
     state = {
@@ -66,6 +67,12 @@ export class Checkbox extends PureComponent {
                         </div>
                     }
                 </label>
+
+                { this.props.error &&
+                    <div className="error">
+                        {this.props.error}
+                    </div>
+                }
             </div>
         );
     }

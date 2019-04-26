@@ -15,7 +15,7 @@ export class InputText extends PureComponent {
     static propTypes = {
         defaultValue: PropTypes.string,
         disabled: PropTypes.bool,
-        error: PropTypes.bool,
+        error: PropTypes.string,
         focus: PropTypes.bool,
         label: PropTypes.string,
         onChange: PropTypes.func,
@@ -138,6 +138,12 @@ export class InputText extends PureComponent {
                             }
                         </div>
                     </div>
+
+                    { this.props.error &&
+                        <div className="error">
+                            {this.props.error}
+                        </div>
+                    }
                 </label>
             </div>
         );
