@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import sass from 'rollup-plugin-sass';
@@ -17,8 +18,8 @@ const bannerPlugin = {
 
 ${license}
 
-*/`
-}
+*/`,
+};
 
 export default [
     {
@@ -30,7 +31,7 @@ export default [
         },
         external: [
             'react',
-            'react-proptypes'
+            'react-proptypes',
         ],
         plugins: [
             bannerPlugin,
@@ -39,6 +40,7 @@ export default [
                 include: 'node_modules/**',
                 namedExports: {
                     'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement'],
+                    'node_modules/react-is/index.js': ['isValidElementType'],
                     'node_modules/classnames/index.js': ['classnames'],
                 },
             }),

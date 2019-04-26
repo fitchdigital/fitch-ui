@@ -1,9 +1,9 @@
 {
   "name": "@fitch-digital/fitch-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "UI Library for Fitch Digital Projects",
   "author": "FITCH DIGITAL",
-  "sideEffects": false,
+  "sideEffects": true,
   "main": "src/index.js",
   "module": "dist/fitch-ui.esm.js",
   "browser": "dist/fitch-ui.umd.js",
@@ -25,11 +25,11 @@
     "Ben Gannaway <ben.gannaway@fitch.com>"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook:dev": "start-storybook -p 6006",
+    "storybook:build": "del docs && build-storybook -o ./docs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "del dist && rollup -c",
-    "start": "npm run storybook",
-    "build-storybook": "del docs && build-storybook -o ./docs"
+    "start": "npm run storybook:dev"
   },
   "dependencies": {},
   "devDependencies": {

@@ -11,7 +11,12 @@ npm start
 npm run build
 ```
 
-## publish
+## publish to NPM
 ```bash
-npm publish --access public
+npm run build && npm publish --access public
+```
+
+### publish docs to github.io
+```bash
+npm run build && npm run storybook:build
 ```
