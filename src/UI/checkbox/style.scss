@@ -1,6 +1,6 @@
-@import '../styles/theme';
+@import '../../styles/theme';
 
-.radio {
+.checkbox {
     label {
         display: flex;
         align-items: center;
@@ -14,9 +14,9 @@
         max-width: 16px;
         min-height: 16px;
         max-height: 16px;
-        background-color: var(--radio-background);
-        border: 1px solid var(--radio-border-color);
-        border-radius: 50%;
+        background-color: var(--checkbox-background);
+        border: 1px solid var(--checkbox-border-color);
+        border-radius: var(--core-border-radius);
 
         input {
             width: 100%;
@@ -30,29 +30,27 @@
             }
         }
 
-        span {
+        svg {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
+            width: 12px;
             transform: translateX(-50%) translateY(-50%);
+            fill: transparent;
             pointer-events: none;
-            background-color: transparent;
         }
     }
 
     .label {
         margin-left: 0.5rem;
-        color: var(--radio-label);
+        color: var(--checkbox-label);
     }
 
     &.focus,
     &:focus-within,
     &:hover {
         .element {
-            border: 1px solid var(--radio-border-color-focus);
+            border: 1px solid var(--checkbox-border-color-focus);
         }
     }
 
@@ -66,11 +64,11 @@
 
     &.checked {
         .element {
-            background-color: var(--radio-background-checked);
+            background-color: var(--checkbox-background-checked);
             border: 1px solid transparent;
 
-            span {
-                background-color: var(--radio-indicator--checked);
+            svg {
+                fill: var(--checkbox-indicator--checked);
             }
         }
     }

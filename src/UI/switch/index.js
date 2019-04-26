@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
-import IconCheckmark from '../svg/icon-checkmark';
-import { excludeFactoryProps } from '../utils';
+import { excludeFactoryProps } from '../../utils';
 import './style.scss';
 
-export class Checkbox extends PureComponent {
+export class Switch extends PureComponent {
 
     static propTypes = {
         checked: PropTypes.bool,
@@ -31,8 +30,8 @@ export class Checkbox extends PureComponent {
     }
 
     render() {
-        const classes = classnames({
-            checkbox: true,
+        const classes = classNames({
+            switch: true,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,
             checked: this.state.checked,
@@ -58,7 +57,7 @@ export class Checkbox extends PureComponent {
                             disabled={!!this.props.disabled}
                             {...props}
                         />
-                        <IconCheckmark />
+                        <span />
                     </div>
                     { this.props.label &&
                         <div className="label">

@@ -3,18 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import { SearchInput } from '../src';
+import { InputSearch } from '../src';
 
-storiesOf('SearchInput', module)
+storiesOf('Input search', module)
     .addDecorator(withKnobs)
     .addDecorator(withInfo)
     .add('default', () => (
-        <SearchInput
+        <InputSearch
             placeholder="Search"
         />
     ))
     .add('interactive', () => (
-        <SearchInput
+        <InputSearch
             disabled={boolean('disabled', false)}
             progress={boolean('progress', false)}
             placeholder={text('placeholder', 'Search')}

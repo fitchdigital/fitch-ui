@@ -1,0 +1,79 @@
+@import '../../styles/theme';
+
+.input-file {
+    .element {
+        position: relative;
+        background-color: var(--file-background);
+        border: 1px solid var(--file-border-color);
+        border-radius: var(--core-border-radius);
+        padding: var(--file-padding);
+        color: var(--file-color);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        // hides the default style whilst keeping it accessible
+        input.inputfile {
+            position: absolute;
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .placeholder {
+            display: inline-block;
+            font-family: var(--core-font-family);
+            font-size: 11px;
+            color: var(--file-border-color);
+        }
+
+        .upload-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: var(--search-icon-padding);
+
+
+            svg {
+                width: 100%;
+                fill: var(--file-icon-color);
+            }
+        }
+
+        &:focus-within {
+            .placeholder {
+                color: var(--file-border-color-focus);
+            }
+
+            .upload-icon {
+                svg {
+                    fill: var(--file-border-color-focus);
+                }
+            }
+        }
+    }
+
+    .label {
+        font-family: var(--core-font-family);
+        margin-bottom: 0.5rem;
+        color: var(--file-label);
+    }
+
+    &.focus,
+    &:focus-within {
+        .element {
+            border: 1px solid var(--file-border-color-focus);
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+
+        .element {
+            opacity: var(--core-opacity-disabled);
+        }
+    }
+}

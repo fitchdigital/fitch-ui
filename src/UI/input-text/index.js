@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
-import { Spinner } from '../spinner';
-import IconEye from '../svg/icon-eye';
-import IconEyeOff from '../svg/icon-eye-off';
-import IconCheckmark from '../svg/icon-checkmark';
-import IconMdClose from '../svg/icon-close';
-import { excludeFactoryProps } from '../utils';
+import { Spinner } from '../../spinner';
+import IconEye from '../../svg/icon-eye';
+import IconEyeOff from '../../svg/icon-eye-off';
+import IconCheckmark from '../../svg/icon-checkmark';
+import IconMdClose from '../../svg/icon-close';
+import { excludeFactoryProps } from '../../utils';
 import './style.scss';
 
-export class TextInput extends PureComponent {
+export class InputText extends PureComponent {
 
     static propTypes = {
         defaultValue: PropTypes.string,
@@ -64,8 +64,8 @@ export class TextInput extends PureComponent {
     }
 
     render() {
-        const classes = classnames({
-            input: true,
+        const classes = classNames({
+            'input-text': true,
             password: !!this.props.password,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,

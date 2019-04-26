@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
-import { Spinner } from '../spinner';
-import IconSearch from '../svg/icon-search';
-import { excludeFactoryProps } from '../utils';
+import { Spinner } from '../../spinner';
+import IconSearch from '../../svg/icon-search';
+import { excludeFactoryProps } from '../../utils';
 import './style.scss';
 
-export class SearchInput extends PureComponent {
+export class InputSearch extends PureComponent {
 
     static propTypes = {
         defaultValue: PropTypes.string,
@@ -33,8 +33,8 @@ export class SearchInput extends PureComponent {
     }
 
     render() {
-        const classes = classnames({
-            search: true,
+        const classes = classNames({
+            'input-search': true,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,
         });

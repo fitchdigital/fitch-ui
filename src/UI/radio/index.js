@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
-import { excludeFactoryProps } from '../utils';
+import { excludeFactoryProps } from '../../utils';
 import './style.scss';
 
 export class Radio extends PureComponent {
@@ -30,7 +30,7 @@ export class Radio extends PureComponent {
     }
 
     render() {
-        const classes = classnames({
+        const classes = classNames({
             radio: true,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,

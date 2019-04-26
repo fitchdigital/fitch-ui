@@ -3,20 +3,20 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import { TextInput } from '../src';
+import { InputText } from '../src';
 
 const testValidate = value => value.length > 3;
 
-storiesOf('TextInput', module)
+storiesOf('Input text', module)
     .addDecorator(withKnobs)
     .addDecorator(withInfo)
     .add('default', () => (
-        <TextInput
+        <InputText
             placeholder="Placeholder"
         />
     ))
     .add('interactive', () => (
-        <TextInput
+        <InputText
             password={boolean('password', false)}
             progress={boolean('progress', false)}
             disabled={boolean('disabled', false)}
@@ -25,7 +25,7 @@ storiesOf('TextInput', module)
         />
     ))
     .add('has validation', () => (
-        <TextInput
+        <InputText
             placeholder="Placeholder"
             validate={testValidate}
         />
