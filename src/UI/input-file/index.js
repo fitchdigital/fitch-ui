@@ -15,6 +15,7 @@ export class InputFile extends PureComponent {
         placeholder: PropTypes.string,
         label: PropTypes.string,
         placeholderMultiple: PropTypes.string,
+        error: PropTypes.string,
     }
 
     static defaultProps = {
@@ -90,6 +91,12 @@ export class InputFile extends PureComponent {
                         </div>
                     </div>
                 </label>
+
+                { this.props.error &&
+                    <div className="error">
+                        {this.props.error}
+                    </div>
+                }
             </div>
         );
     }

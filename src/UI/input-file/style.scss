@@ -62,6 +62,14 @@
         color: var(--file-label);
     }
 
+    .error {
+        font-family: var(--core-font-family);
+        font-size: 11px;
+        margin-bottom: 0.5rem;
+        color: var(--core-color-error);
+        padding: var(--core-padding-error);
+    }
+
     &.focus,
     &:focus-within {
         .element {

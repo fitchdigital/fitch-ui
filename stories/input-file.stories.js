@@ -11,6 +11,9 @@ storiesOf('Input file', module)
     .add('default', () => (
         <InputFile />
     ))
+    .add('default with error', () => (
+        <InputFile error="this field is required" />
+    ))
     .add('multiple with accept', () => (
         <InputFile
             placeholder="Choose files..."
