@@ -11,6 +11,9 @@ storiesOf('Checkbox', module)
     .add('default', () => (
         <Checkbox />
     ))
+    .add('default with error', () => (
+        <Checkbox error="this field is required" />
+    ))
     .add('interactive', () => (
         <Checkbox
             disabled={boolean('disabled', false)}

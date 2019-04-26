@@ -11,6 +11,9 @@ storiesOf('Switch', module)
     .add('default', () => (
         <Switch />
     ))
+    .add('default with error', () => (
+        <Switch error="this field is required" />
+    ))
     .add('interactive', () => (
         <Switch
             disabled={boolean('disabled', false)}

@@ -11,6 +11,9 @@ storiesOf('Radio', module)
     .add('default', () => (
         <Radio />
     ))
+    .add('default with error', () => (
+        <Radio error="this field is required" />
+    ))
     .add('interactive', () => (
         <Radio
             disabled={boolean('disabled', false)}

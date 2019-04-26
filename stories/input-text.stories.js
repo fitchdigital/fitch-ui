@@ -15,6 +15,9 @@ storiesOf('Input text', module)
             placeholder="Placeholder"
         />
     ))
+    .add('default with error', () => (
+        <InputText placeholder="Placeholder" error="this field is required" />
+    ))
     .add('interactive', () => (
         <InputText
             password={boolean('password', false)}
