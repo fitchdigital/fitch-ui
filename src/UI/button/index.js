@@ -1,7 +1,7 @@
+/* eslint-disable react/button-has-type */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { NavLink } from 'react-router-dom';
 
 import './style.scss';
 import './primary.scss';
@@ -12,9 +12,12 @@ export class Button extends PureComponent {
 
     static propTypes = {
         title: PropTypes.string,
+        type: PropTypes.oneOf([
+            'submit',
+            'button',
+        ]),
         icon: PropTypes.func,
         onClick: PropTypes.func,
-        to: PropTypes.string,
         href: PropTypes.string,
         target: PropTypes.string,
         primary: PropTypes.bool,
@@ -26,6 +29,7 @@ export class Button extends PureComponent {
 
     static defaultProps = {
         target: '_blank',
+        type: 'button',
     }
 
     renderContent() {
@@ -54,22 +58,18 @@ export class Button extends PureComponent {
         });
 
         if (!this.props.primary && !this.props.secondary && !this.props.minimal) {
-            console.warn('no theme in button');
+            console.warn('No theme in button');
         }
 
         if (this.props.onClick) {
             return (
-                <button type="button" className={classes} onClick={this.props.onClick}>
+                <button
+                    type={this.props.type}
+                    className={classes}
+                    onClick={this.props.onClick}
+                >
                     {this.renderContent()}
                 </button>
-            );
-        }
-
-        if (this.props.to) {
-            return (
-                <NavLink to={this.props.to} className={classes} activeClassName="active">
-                    {this.renderContent()}
-                </NavLink>
             );
         }
 
@@ -82,7 +82,10 @@ export class Button extends PureComponent {
         }
 
         return (
-            <button type="submit" className={classes}>
+            <button
+                type={this.props.type}
+                className={classes}
+            >
                 {this.renderContent()}
             </button>
         );

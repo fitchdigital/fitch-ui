@@ -28,21 +28,22 @@ export default [
             name,
             file: pkg.browser,
             format: 'umd',
+            globals: {
+                classnames: 'classnames',
+                'prop-types': 'PropTypes',
+                react: 'React',
+            },
         },
         external: [
+            'classnames',
+            'prop-types',
             'react',
-            'react-proptypes',
         ],
         plugins: [
             bannerPlugin,
             resolve(),
             commonjs({
                 include: 'node_modules/**',
-                namedExports: {
-                    'node_modules/react/index.js': ['Component', 'PureComponent', 'Fragment', 'Children', 'createElement'],
-                    'node_modules/react-is/index.js': ['isValidElementType'],
-                    'node_modules/classnames/index.js': ['classnames'],
-                },
             }),
             babel({
                 exclude: ['node_modules/**'],

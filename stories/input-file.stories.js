@@ -31,6 +31,7 @@ storiesOf('Input file', module)
     .add('interactive', () => (
         <InputFile
             disabled={boolean('disabled', false)}
+            multiple={boolean('multiple', false)}
             placeholder={text('placeholder', 'Choose a file...')}
             placeholderMultiple={text('placeholderMultiple', '{count} files selected')}
             label={text('label', 'A Label:')}
