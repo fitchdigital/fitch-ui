@@ -1,10 +1,11 @@
 {
   "name": "@fitch-digital/fitch-ui",
-  "version": "0.0.5",
+  "version": "0.0.51",
   "description": "UI Library for Fitch Digital Projects",
   "author": "FITCH DIGITAL",
-  "sideEffects": false,
+  "sideEffects": true,
   "main": "src/index.js",
+  "browser": "dist/fitch-ui.umd.js",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fitchdigital/fitch-ui/issues"
