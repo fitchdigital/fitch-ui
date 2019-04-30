@@ -13,7 +13,10 @@ import './style.scss';
 export class InputText extends PureComponent {
 
     static propTypes = {
-        defaultValue: PropTypes.string,
+        defaultValue: PropTypes.oneOf([
+            'text',
+            'number',
+        ]),
         disabled: PropTypes.bool,
         error: PropTypes.string,
         focus: PropTypes.bool,

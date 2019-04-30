@@ -10,7 +10,10 @@ import './style.scss';
 export class InputSearch extends PureComponent {
 
     static propTypes = {
-        defaultValue: PropTypes.string,
+        defaultValue: PropTypes.oneOf([
+            'text',
+            'number',
+        ]),
         disabled: PropTypes.bool,
         focus: PropTypes.bool,
         onChange: PropTypes.func,
