@@ -95,9 +95,9 @@ export class InputText extends PureComponent {
             'progress',
             'success',
             'type',
+            'field',
         ], this.props);
         const { field } = this.props;
-        const { name, value } = field;
         return (
             <div className={classes}>
                 <label>
@@ -115,8 +115,7 @@ export class InputText extends PureComponent {
                             disabled={!!this.props.disabled}
                             onChange={this.handleChange}
                             {...props}
-                            name={name}
-                            value={value}
+                            {...field}
                         />
 
                         <div className="icon">

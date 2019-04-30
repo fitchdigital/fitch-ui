@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.9
+@version 0.0.10
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -741,10 +741,8 @@ THE SOFTWARE.
           type = 'password';
         }
 
-        var props = excludeFactoryProps(['defaultValue', 'disabled', 'error', 'focus', 'label', 'onChange', 'password', 'placeholder', 'progress', 'success', 'type'], this.props);
+        var props = excludeFactoryProps(['defaultValue', 'disabled', 'error', 'focus', 'label', 'onChange', 'password', 'placeholder', 'progress', 'success', 'type', 'field'], this.props);
         var field = this.props.field;
-        var name = field.name,
-            value = field.value;
         return React__default.createElement("div", {
           className: classes
         }, React__default.createElement("label", null, this.props.label && React__default.createElement("div", {
@@ -757,10 +755,7 @@ THE SOFTWARE.
           defaultValue: this.props.defaultValue,
           disabled: !!this.props.disabled,
           onChange: this.handleChange
-        }, props, {
-          name: name,
-          value: value
-        })), React__default.createElement("div", {
+        }, props, field)), React__default.createElement("div", {
           className: "icon"
         }, this.props.password && this.state.showPassword && React__default.createElement(IconEyeOff, {
           onClick: this.togglePasswordType
