@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.51
+@version 0.0.6
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -631,7 +631,7 @@ THE SOFTWARE.
   }(React.PureComponent);
 
   _defineProperty(InputSearch, "propTypes", {
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.oneOf(['text', 'number']),
     disabled: PropTypes.bool,
     focus: PropTypes.bool,
     onChange: PropTypes.func,
@@ -770,7 +770,7 @@ THE SOFTWARE.
   }(React.PureComponent);
 
   _defineProperty(InputText, "propTypes", {
-    defaultValue: PropTypes.string,
+    defaultValue: PropTypes.oneOf(['text', 'number']),
     disabled: PropTypes.bool,
     error: PropTypes.string,
     focus: PropTypes.bool,
