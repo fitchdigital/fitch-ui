@@ -38,5 +38,6 @@ storiesOf('Button', module)
             primary
             disabled={boolean('disabled', false)}
             title={text('title', 'Button')}
+            active={boolean('active', false)}
         />
     ));

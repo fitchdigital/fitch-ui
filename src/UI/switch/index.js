@@ -58,7 +58,6 @@ export class Switch extends PureComponent {
                             disabled={!!this.props.disabled}
                             {...props}
                         />
-                        <span />
                     </div>
                     { this.props.label &&
                         <div className="label">

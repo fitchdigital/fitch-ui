@@ -25,6 +25,7 @@ export class Button extends PureComponent {
         minimal: PropTypes.bool,
         hover: PropTypes.bool,
         disabled: PropTypes.bool,
+        active: PropTypes.bool,
     }
 
     static defaultProps = {
@@ -37,10 +38,10 @@ export class Button extends PureComponent {
         const Icon = icon;
         return (
             <div className="label">
-                { title &&
+                {title &&
                     <p>{title}</p>
                 }
-                { icon &&
+                {icon &&
                     <Icon />
                 }
             </div>
@@ -55,6 +56,7 @@ export class Button extends PureComponent {
             primary: !!this.props.primary,
             secondary: !!this.props.secondary,
             minimal: !!this.props.minimal,
+            active: this.props.active,
         });
 
         if (!this.props.primary && !this.props.secondary && !this.props.minimal) {

@@ -28,14 +28,14 @@
 
     &.hover:not(.active) {
         &:before {
-            opacity: 0.08;
+            opacity: 0.1;
         }
     }
 
     @media (hover: hover) {
         &:hover:not(.active) {
             &:before {
-                opacity: 0.08;
+                opacity: 0.1;
             }
         }
     }
@@ -47,5 +47,9 @@
 
     &.active {
         color: var(--button-minimal-color-focus);
+
+        &:before {
+            opacity: 0.1;
+        }
     }
 }
