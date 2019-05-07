@@ -26,13 +26,6 @@ storiesOf('Button', module)
             minimal
         />
     ))
-    .add('react-router-dom', () => (
-        <Button
-            title="Minimal"
-            to="/"
-            primary
-        />
-    ))
     .add('interactive', () => (
         <Button
             primary

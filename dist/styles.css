@@ -65,6 +65,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -151,6 +154,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -268,6 +274,105 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
+  --spacer-small: 20px;
+  --spacer-medium: 40px;
+  --spacer-large: 60px;
+  --padding-small: 20px;
+  --padding-medium: 40px;
+  --padding-large: 60px;
+}
+
+.list .label {
+  padding: var(--list-padding);
+}
+.list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list ul li {
+  position: relative;
+  padding: var(--list-padding);
+  background-color: #ffffff;
+}
+.list.primary ul li:nth-child(odd) {
+  background-color: var(--list-primary-background);
+}
+.list.secondary ul li:nth-child(odd) {
+  background-color: var(--list-secondary-background);
+}:root {
+  --core-font-family: sans-serif;
+  --core-border-radius: 4px;
+  --core-opacity-disabled: 0.5;
+  --core-color-primary: #3880ff;
+  --core-color-success: #95dcb2;
+  --core-color-error: #db7f93;
+  --core-color-border: #dddddd;
+  --core-padding-error: 8px 0;
+  --button-primary-background: var(--core-color-primary);
+  --button-primary-padding: 8px 16px;
+  --button-primary-color: #ffffff;
+  --button-secondary-background: transparent;
+  --button-secondary-padding: 8px 16px;
+  --button-secondary-color: #666666;
+  --button-minimal-background: transparent;
+  --button-minimal-padding: 8px 16px;
+  --button-minimal-color: #666666;
+  --button-minimal-color-focus: #131313;
+  --input-background: #ffffff;
+  --input-background-disabled: #fcfcfc;
+  --input-border-color: #dddddd;
+  --input-border-color-focus: #888888;
+  --input-color: #666666;
+  --input-padding: 8px 16px;
+  --input-label: #666666;
+  --file-background: #ffffff;
+  --file-background-disabled: #fcfcfc;
+  --file-border-color: #dddddd;
+  --file-border-color-focus: #888888;
+  --file-color: #666666;
+  --file-padding: 8px 16px;
+  --file-label: #666666;
+  --file-icon-color: #dddddd;
+  --file-icon-padding: 8px;
+  --search-background: #ffffff;
+  --search-background-disabled: #fcfcfc;
+  --search-border-color: #dddddd;
+  --search-border-color-focus: #888888;
+  --search-color: #666666;
+  --search-padding: 8px 16px;
+  --search-icon-color: #dddddd;
+  --search-icon-padding: 8px;
+  --spinner-color-primary: var(--core-color-primary);
+  --spinner-color-secondary: #dddddd;
+  --spinner-width: 2px;
+  --radio-background: #ffffff;
+  --radio-background-checked: var(--core-color-primary);
+  --radio-border-color: #dddddd;
+  --radio-border-color-focus: #888888;
+  --radio-indicator: #dddddd;
+  --radio-indicator--checked: #ffffff;
+  --radio-label: #666666;
+  --checkbox-background: #ffffff;
+  --checkbox-background-checked: var(--core-color-primary);
+  --checkbox-border-color: #dddddd;
+  --checkbox-border-color-focus: #888888;
+  --checkbox-indicator: #dddddd;
+  --checkbox-indicator--checked: #ffffff;
+  --checkbox-label: #666666;
+  --switch-background: #ffffff;
+  --switch-background-checked: var(--core-color-primary);
+  --switch-border-color: #dddddd;
+  --switch-border-color-focus: #888888;
+  --switch-indicator: #dddddd;
+  --switch-indicator--checked: #ffffff;
+  --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -359,6 +464,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -456,6 +564,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -566,6 +677,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -676,6 +790,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -789,6 +906,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -919,6 +1039,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1055,6 +1178,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1193,6 +1319,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1333,6 +1462,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1470,6 +1602,9 @@
   --switch-indicator: #dddddd;
   --switch-indicator--checked: #ffffff;
   --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-secondary-background: #ececec;
+  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;

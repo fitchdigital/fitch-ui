@@ -1,0 +1,39 @@
+@import '../../styles/theme';
+
+.list {
+    .label {
+        padding: var(--list-padding);
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            padding: var(--list-padding);
+            background-color: #ffffff;
+        }
+    }
+
+    &.primary {
+        ul {
+            li {
+                &:nth-child(odd) {
+                    background-color: var(--list-primary-background);
+                }
+            }
+        }
+    }
+
+    &.secondary {
+        ul {
+            li {
+                &:nth-child(odd) {
+                    background-color: var(--list-secondary-background);
+                }
+            }
+        }
+    }
+}

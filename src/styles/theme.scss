@@ -90,6 +90,11 @@ $core-breakpoint-large: 1024px;
     --switch-indicator--checked: #ffffff;
     --switch-label: #666666;
 
+    // lists
+    --list-primary-background: var(--core-color-primary);
+    --list-secondary-background: #ececec;
+    --list-padding: 16px;
+
     // spacer
     --spacer-small: 20px;
     --spacer-medium: 40px;
