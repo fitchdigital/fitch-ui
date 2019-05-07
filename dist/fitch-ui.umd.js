@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.7
+@version 0.0.12
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
