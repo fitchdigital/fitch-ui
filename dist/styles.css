@@ -596,16 +596,19 @@
   z-index: 0;
 }
 .button.primary.hover:not(.active):before {
-  opacity: 0.08;
+  opacity: 0.1;
 }
 @media (hover: hover) {
   .button.primary:hover:not(.active):before {
-    opacity: 0.08;
+    opacity: 0.1;
   }
 }
 .button.primary.disabled {
   pointer-events: none;
   opacity: var(--core-opacity-disabled);
+}
+.button.primary.active:before {
+  opacity: 0.1;
 }:root {
   --core-font-family: sans-serif;
   --core-border-radius: 4px;
@@ -703,11 +706,11 @@
   z-index: 0;
 }
 .button.secondary.hover:not(.active):before {
-  opacity: 0.08;
+  opacity: 0.1;
 }
 @media (hover: hover) {
   .button.secondary:hover:not(.active):before {
-    opacity: 0.08;
+    opacity: 0.1;
   }
 }
 .button.secondary.disabled {
@@ -716,6 +719,9 @@
 }
 .button.secondary.active {
   color: var(--button-minimal-color-focus);
+}
+.button.secondary.active:before {
+  opacity: 0.1;
 }:root {
   --core-font-family: sans-serif;
   --core-border-radius: 4px;
