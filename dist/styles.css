@@ -159,48 +159,22 @@
   --padding-large: 60px;
 }
 
-.padding {
-  position: relative;
-  padding: 0 var(--padding-small);
+.spinner {
+  border: var(--spinner-width) solid var(--spinner-color-secondary);
+  border-top: var(--spinner-width) solid var(--spinner-color-primary);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
 }
-.padding:before, .padding:after {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  font-family: monospace;
-  font-size: 8px;
-  color: black;
-  width: var(--padding-small);
-  content: "S";
-  opacity: 0;
-}
-.padding:before {
-  left: 0;
-}
-.padding:after {
-  right: 0;
-}
-@media only screen and (min-width: 768px) {
-  .padding {
-    padding: 0 var(--padding-medium);
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  .padding:before, .padding:after {
-    width: var(--padding-medium);
-    content: "M";
+  100% {
+    transform: rotate(360deg);
   }
-}
-@media only screen and (min-width: 1024px) {
-  .padding {
-    padding: 0 var(--padding-large);
-  }
-  .padding:before, .padding:after {
-    width: var(--padding-large);
-    content: "L";
-  }
-}
-.padding.debug:before, .padding.debug:after {
-  opacity: 1;
-  background-color: rgba(0, 255, 255, 0.3);
 }:root {
   --core-font-family: sans-serif;
   --core-border-radius: 4px;
@@ -276,22 +250,48 @@
   --padding-large: 60px;
 }
 
-.spinner {
-  border: var(--spinner-width) solid var(--spinner-color-secondary);
-  border-top: var(--spinner-width) solid var(--spinner-color-primary);
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  animation: spin 1s linear infinite;
+.padding {
+  position: relative;
+  padding: 0 var(--padding-small);
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+.padding:before, .padding:after {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-family: monospace;
+  font-size: 8px;
+  color: black;
+  width: var(--padding-small);
+  content: "S";
+  opacity: 0;
+}
+.padding:before {
+  left: 0;
+}
+.padding:after {
+  right: 0;
+}
+@media only screen and (min-width: 768px) {
+  .padding {
+    padding: 0 var(--padding-medium);
   }
-  100% {
-    transform: rotate(360deg);
+  .padding:before, .padding:after {
+    width: var(--padding-medium);
+    content: "M";
   }
+}
+@media only screen and (min-width: 1024px) {
+  .padding {
+    padding: 0 var(--padding-large);
+  }
+  .padding:before, .padding:after {
+    width: var(--padding-large);
+    content: "L";
+  }
+}
+.padding.debug:before, .padding.debug:after {
+  opacity: 1;
+  background-color: rgba(0, 255, 255, 0.3);
 }:root {
   --core-font-family: sans-serif;
   --core-border-radius: 4px;
