@@ -1,6 +1,6 @@
 {
   "name": "@fitch-digital/fitch-ui",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "UI Library for Fitch Digital Projects",
   "author": "FITCH DIGITAL",
   "sideEffects": true,

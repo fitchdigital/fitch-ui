@@ -43,6 +43,7 @@ export class List extends PureComponent {
                     { this.props.list.map((item, index) => {
                         const Component = item.component;
                         const key = item.uid || index;
+                        const data = item.data || {};
                         return (
                             <li key={key}>
                                 <div
@@ -51,7 +52,7 @@ export class List extends PureComponent {
                                         this.handleClick(key);
                                     }}
                                 >
-                                    <Component />
+                                    <Component {...data} />
                                 </div>
                             </li>
                         );

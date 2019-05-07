@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.13
+@version 0.0.14
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -839,6 +839,7 @@ THE SOFTWARE.
         }, React__default.createElement(Label, null)), React__default.createElement("ul", null, this.props.list.map(function (item, index) {
           var Component = item.component;
           var key = item.uid || index;
+          var data = item.data || {};
           return React__default.createElement("li", {
             key: key
           }, React__default.createElement("div", {
@@ -846,7 +847,7 @@ THE SOFTWARE.
             onClick: function onClick() {
               _this2.handleClick(key);
             }
-          }, React__default.createElement(Component, null)));
+          }, React__default.createElement(Component, data)));
         })));
       }
     }]);
