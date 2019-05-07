@@ -12,9 +12,16 @@ npm run build
 ```
 
 ## publish to NPM
-```bash
-npm run build && npm publish --access public
-```
+
+Run the following steps:
+1) manually bump version on package.json
+2) `npm run build` // builds the UMD build to the dist folder
+3) `npm run storybook:build` // builds the storybook docs
+4) commit and push all code to GitHub.
+5) Tag commit with build number added on step 1
+6) `git push --tags` to push the tag to github.
+7) publish using `npm publish --access public`
+
 
 ### publish docs to github.io
 ```bash
@@ -33,4 +40,3 @@ npm run build && npm run storybook:build
     <AnotherChild />
 </Tabs>
 ```
-* change style of active buttons to inherit the rollover style
