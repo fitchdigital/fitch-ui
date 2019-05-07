@@ -31,6 +31,7 @@ export class InputText extends PureComponent {
             'number',
         ]),
         validate: PropTypes.func,
+        field: PropTypes.object,
     }
 
     static defaultProps = {
@@ -94,15 +95,16 @@ export class InputText extends PureComponent {
             'progress',
             'success',
             'type',
+            'field',
         ], this.props);
-
+        const { field } = this.props;
         return (
             <div className={classes}>
                 <label>
-                    { this.props.label &&
-                        <div className="label">
-                            {this.props.label}
-                        </div>
+                    {this.props.label &&
+                    <div className="label">
+                        {this.props.label}
+                    </div>
                     }
 
                     <div className="element">
@@ -113,39 +115,40 @@ export class InputText extends PureComponent {
                             disabled={!!this.props.disabled}
                             onChange={this.handleChange}
                             {...props}
+                            {...field}
                         />
 
                         <div className="icon">
-                            { this.props.password && this.state.showPassword &&
-                                <IconEyeOff onClick={this.togglePasswordType} />
+                            {this.props.password && this.state.showPassword &&
+                            <IconEyeOff onClick={this.togglePasswordType} />
                             }
 
-                            { this.props.password && !this.state.showPassword &&
-                                <IconEye onClick={this.togglePasswordType} />
+                            {this.props.password && !this.state.showPassword &&
+                            <IconEye onClick={this.togglePasswordType} />
                             }
 
-                            { !this.props.password &&
-                                <>
-                                    { (this.state.valid === true || this.props.success) &&
-                                        <IconCheckmark />
-                                    }
+                            {!this.props.password &&
+                            <>
+                                {(this.state.valid === true || this.props.success) &&
+                                <IconCheckmark />
+                                }
 
-                                    { (this.state.valid === false || this.props.error) &&
-                                        <IconMdClose />
-                                    }
+                                {(this.state.valid === false || this.props.error) &&
+                                <IconMdClose />
+                                }
 
-                                    { this.props.progress &&
-                                        <Spinner />
-                                    }
-                                </>
+                                {this.props.progress &&
+                                <Spinner />
+                                }
+                            </>
                             }
                         </div>
                     </div>
 
-                    { this.props.error &&
-                        <div className="error">
-                            {this.props.error}
-                        </div>
+                    {this.props.error &&
+                    <div className="error">
+                        {this.props.error}
+                    </div>
                     }
                 </label>
             </div>

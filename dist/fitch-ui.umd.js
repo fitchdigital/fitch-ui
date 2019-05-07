@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.6
+@version 0.0.10
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -741,7 +741,8 @@ THE SOFTWARE.
           type = 'password';
         }
 
-        var props = excludeFactoryProps(['defaultValue', 'disabled', 'error', 'focus', 'label', 'onChange', 'password', 'placeholder', 'progress', 'success', 'type'], this.props);
+        var props = excludeFactoryProps(['defaultValue', 'disabled', 'error', 'focus', 'label', 'onChange', 'password', 'placeholder', 'progress', 'success', 'type', 'field'], this.props);
+        var field = this.props.field;
         return React__default.createElement("div", {
           className: classes
         }, React__default.createElement("label", null, this.props.label && React__default.createElement("div", {
@@ -754,7 +755,7 @@ THE SOFTWARE.
           defaultValue: this.props.defaultValue,
           disabled: !!this.props.disabled,
           onChange: this.handleChange
-        }, props)), React__default.createElement("div", {
+        }, props, field)), React__default.createElement("div", {
           className: "icon"
         }, this.props.password && this.state.showPassword && React__default.createElement(IconEyeOff, {
           onClick: this.togglePasswordType
@@ -781,7 +782,8 @@ THE SOFTWARE.
     progress: PropTypes.bool,
     success: PropTypes.bool,
     type: PropTypes.oneOf(['text', 'number']),
-    validate: PropTypes.func
+    validate: PropTypes.func,
+    field: PropTypes.object
   });
 
   _defineProperty(InputText, "defaultProps", {
