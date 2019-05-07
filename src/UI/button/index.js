@@ -39,10 +39,10 @@ export class Button extends PureComponent {
         return (
             <div className="label">
                 {title &&
-                <p>{title}</p>
+                    <p>{title}</p>
                 }
                 {icon &&
-                <Icon />
+                    <Icon />
                 }
             </div>
         );
