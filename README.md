@@ -20,3 +20,17 @@ npm run build && npm publish --access public
 ```bash
 npm run build && npm run storybook:build
 ```
+
+
+## TODO
+* create tabs component
+```jsx
+<Tabs
+    tabs={['some child', 'another child']}
+    onChange={(index) => console.log('change to', index)}
+>
+    <SomeChildComponent />
+    <AnotherChild />
+</Tabs>
+```
+* change style of active buttons to inherit the rollover style
