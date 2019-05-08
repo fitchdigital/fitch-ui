@@ -1,10 +1,6 @@
 @import '../../styles/theme';
 
 .list {
-    .label {
-        padding: var(--list-padding);
-    }
-
     ul {
         list-style-type: none;
         margin: 0;
@@ -12,7 +8,6 @@
 
         li {
             position: relative;
-            padding: var(--list-padding);
             background-color: #ffffff;
         }
     }

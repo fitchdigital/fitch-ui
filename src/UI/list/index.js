@@ -11,17 +11,10 @@ export class List extends PureComponent {
         list: PropTypes.array,
         primary: PropTypes.bool,
         secondary: PropTypes.bool,
-        onChange: PropTypes.func,
     }
 
     static defaultProps = {
         list: [],
-    }
-
-    handleClick = (key) => {
-        if (this.props.onChange) {
-            this.props.onChange(key);
-        }
     }
 
     render() {
@@ -35,9 +28,7 @@ export class List extends PureComponent {
         return (
             <div className={classes}>
                 { this.props.label &&
-                    <div className="label">
-                        <Label />
-                    </div>
+                    <Label />
                 }
                 <ul>
                     { this.props.list.map((item, index) => {
@@ -46,14 +37,7 @@ export class List extends PureComponent {
                         const data = item.data || {};
                         return (
                             <li key={key}>
-                                <div
-                                    role="button"
-                                    onClick={() => {
-                                        this.handleClick(key);
-                                    }}
-                                >
-                                    <Component {...data} />
-                                </div>
+                                <Component {...data} />
                             </li>
                         );
                     })}
