@@ -67,7 +67,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -156,7 +155,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -276,7 +274,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -285,9 +282,6 @@
   --padding-large: 60px;
 }
 
-.list .label {
-  padding: var(--list-padding);
-}
 .list ul {
   list-style-type: none;
   margin: 0;
@@ -295,7 +289,6 @@
 }
 .list ul li {
   position: relative;
-  padding: var(--list-padding);
   background-color: #ffffff;
 }
 .list.primary ul li:nth-child(odd) {
@@ -372,7 +365,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -466,7 +458,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -566,7 +557,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -679,7 +669,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -792,7 +781,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -908,7 +896,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1041,7 +1028,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1180,7 +1166,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1321,7 +1306,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1464,7 +1448,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
@@ -1604,7 +1587,6 @@
   --switch-label: #666666;
   --list-primary-background: var(--core-color-primary);
   --list-secondary-background: #ececec;
-  --list-padding: 16px;
   --spacer-small: 20px;
   --spacer-medium: 40px;
   --spacer-large: 60px;
