@@ -4,6 +4,8 @@ $core-breakpoint-large: 1024px;
 :root {
     // core
     --core-font-family: sans-serif;
+    --core-font-size: 14px;
+    --core-font-size-small: 11px;
     --core-border-radius: 4px;
     --core-opacity-disabled: 0.5;
     --core-color-primary: #3880ff; // blue
@@ -92,7 +94,9 @@ $core-breakpoint-large: 1024px;
 
     // lists
     --list-primary-background: var(--core-color-primary);
-    --list-secondary-background: #ececec;
+    --list-label-padding: 16px 0;
+    --list-label-color: #666666;
+    --list-border-color: #dddddd;
 
     // spacer
     --spacer-small: 20px;

@@ -2,6 +2,10 @@
 
 .input-search {
     position: relative;
+    font-family: var(--core-font-family);
+    font-size: var(--core-font-size);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     background-color: var(--search-background);
     border: 1px solid var(--search-border-color);
     border-radius: var(--core-border-radius);

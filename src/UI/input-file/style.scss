@@ -1,6 +1,11 @@
 @import '../../styles/theme';
 
 .input-file {
+    font-family: var(--core-font-family);
+    font-size: var(--core-font-size);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
     .element {
         position: relative;
         background-color: var(--file-background);
@@ -25,8 +30,7 @@
 
         .placeholder {
             display: inline-block;
-            font-family: var(--core-font-family);
-            font-size: 11px;
+            font-size: var(--core-font-size-small);
             color: var(--file-border-color);
         }
 
@@ -57,14 +61,12 @@
     }
 
     .label {
-        font-family: var(--core-font-family);
         margin-bottom: 0.5rem;
         color: var(--file-label);
     }
 
     .error {
-        font-family: var(--core-font-family);
-        font-size: 11px;
+        font-size: var(--core-font-size-small);
         margin-bottom: 0.5rem;
         color: var(--core-color-error);
         padding: var(--core-padding-error);

@@ -1,6 +1,11 @@
 @import '../../styles/theme';
 
 .radio {
+    font-family: var(--core-font-family);
+    font-size: var(--core-font-size);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
     label {
         display: flex;
         align-items: center;
@@ -49,8 +54,7 @@
     }
 
     .error {
-        font-family: var(--core-font-family);
-        font-size: 11px;
+        font-size: var(--core-font-size-small);
         margin-bottom: 0.5rem;
         color: var(--core-color-error);
         padding: var(--core-padding-error);

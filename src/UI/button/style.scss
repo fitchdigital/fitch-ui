@@ -5,7 +5,9 @@
     @include reset-button;
     display: inline-flex;
     font-family: var(--core-font-family);
-    font-weight: var(--core-font-weight);
+    font-size: var(--core-font-size);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
