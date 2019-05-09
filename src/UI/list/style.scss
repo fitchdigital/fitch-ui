@@ -20,6 +20,7 @@
     &__label {
         position: relative;
         display: flex;
+        align-items: center;
         min-height: 30px;
         overflow: hidden;
         padding: var(--list-label-padding);

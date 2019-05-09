@@ -79,22 +79,17 @@
   --padding-large: 60px;
 }
 
-.spinner {
-  border: var(--spinner-width) solid var(--spinner-color-secondary);
-  border-top: var(--spinner-width) solid var(--spinner-color-primary);
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  animation: spin 1s linear infinite;
+.spacer.small {
+  height: var(--spacer-small);
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.spacer.medium {
+  height: var(--spacer-medium);
+}
+.spacer.large {
+  height: var(--spacer-large);
+}
+.spacer.debug {
+  background-color: rgba(0, 255, 255, 0.3);
 }:root {
   --core-font-family: sans-serif;
   --core-font-size: 14px;
@@ -385,17 +380,20 @@
   --padding-large: 60px;
 }
 
-.spacer.small {
-  height: var(--spacer-small);
+.list.primary .list__tab {
+  border-top: 1px solid transparent;
 }
-.spacer.medium {
-  height: var(--spacer-medium);
+.list.primary .list__tab:before {
+  background-color: var(--list-primary-background);
 }
-.spacer.large {
-  height: var(--spacer-large);
+.list.primary .list__tab > div {
+  color: var(--list-label-color);
 }
-.spacer.debug {
-  background-color: rgba(0, 255, 255, 0.3);
+.list.primary li:nth-child(odd) .list__tab:before {
+  opacity: 1;
+}
+.list.primary li:nth-child(odd) .list__tab > div {
+  color: white;
 }:root {
   --core-font-family: sans-serif;
   --core-font-size: 14px;
@@ -477,20 +475,22 @@
   --padding-large: 60px;
 }
 
-.list.primary .list__tab {
-  border-top: 1px solid transparent;
+.spinner {
+  border: var(--spinner-width) solid var(--spinner-color-secondary);
+  border-top: var(--spinner-width) solid var(--spinner-color-primary);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
 }
-.list.primary .list__tab:before {
-  background-color: var(--list-primary-background);
-}
-.list.primary .list__tab > div {
-  color: var(--list-label-color);
-}
-.list.primary li:nth-child(odd) .list__tab:before {
-  opacity: 1;
-}
-.list.primary li:nth-child(odd) .list__tab > div {
-  color: white;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }:root {
   --core-font-family: sans-serif;
   --core-font-size: 14px;
@@ -1046,6 +1046,7 @@
 .list__label {
   position: relative;
   display: flex;
+  align-items: center;
   min-height: 30px;
   overflow: hidden;
   padding: var(--list-label-padding);
