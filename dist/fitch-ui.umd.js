@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.17
+@version 0.0.18
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -855,7 +855,7 @@ THE SOFTWARE.
           var data = item.data || {};
           return React__default.createElement("li", {
             key: key
-          }, Component && React__default.createElement(Component, data), !Component && React__default.createElement("div", {
+          }, Component && React__default.createElement(Component, item), !Component && React__default.createElement("div", {
             className: "list__tab"
           }, Object.keys(data).map(function (prop, i) {
             return React__default.createElement("div", {

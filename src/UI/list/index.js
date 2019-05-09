@@ -52,7 +52,7 @@ export class List extends PureComponent {
                         return (
                             <li key={key}>
                                 { Component &&
-                                    <Component {...data} />
+                                    <Component {...item} />
                                 }
 
                                 { !Component &&
