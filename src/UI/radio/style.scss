@@ -3,8 +3,13 @@
 .radio {
     font-family: var(--core-font-family);
     font-size: var(--core-font-size);
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+
+    * {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
     label {
         display: flex;

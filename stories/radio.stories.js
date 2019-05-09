@@ -9,10 +9,10 @@ storiesOf('Radio', module)
     .addDecorator(withKnobs)
     .addDecorator(withInfo)
     .add('default', () => (
-        <Radio />
+        <Radio label="Label" />
     ))
     .add('default with error', () => (
-        <Radio error="this field is required" />
+        <Radio label="Label" error="this field is required" />
     ))
     .add('interactive', () => (
         <Radio
