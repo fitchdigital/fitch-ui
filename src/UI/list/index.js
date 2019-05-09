@@ -48,11 +48,13 @@ export class List extends PureComponent {
                         const Component = item.component;
                         const key = item.uid || index;
                         const data = item.data || {};
+                        const props = Object.assign({}, item, data);
+                        delete props.data;
 
                         return (
                             <li key={key}>
                                 { Component &&
-                                    <Component {...item} />
+                                    <Component {...props} />
                                 }
 
                                 { !Component &&
