@@ -79,98 +79,6 @@
   --padding-large: 60px;
 }
 
-.spacer.small {
-  height: var(--spacer-small);
-}
-.spacer.medium {
-  height: var(--spacer-medium);
-}
-.spacer.large {
-  height: var(--spacer-large);
-}
-.spacer.debug {
-  background-color: rgba(0, 255, 255, 0.3);
-}:root {
-  --core-font-family: sans-serif;
-  --core-font-size: 14px;
-  --core-font-size-small: 11px;
-  --core-border-radius: 4px;
-  --core-opacity-disabled: 0.5;
-  --core-color-primary: #3880ff;
-  --core-color-success: #95dcb2;
-  --core-color-error: #db7f93;
-  --core-color-border: #dddddd;
-  --core-padding-error: 8px 0;
-  --button-primary-background: var(--core-color-primary);
-  --button-primary-padding: 8px 16px;
-  --button-primary-color: #ffffff;
-  --button-secondary-background: transparent;
-  --button-secondary-padding: 8px 16px;
-  --button-secondary-color: #666666;
-  --button-minimal-background: transparent;
-  --button-minimal-padding: 8px 16px;
-  --button-minimal-color: #666666;
-  --button-minimal-color-focus: #131313;
-  --input-background: #ffffff;
-  --input-background-disabled: #fcfcfc;
-  --input-border-color: #dddddd;
-  --input-border-color-focus: #888888;
-  --input-color: #666666;
-  --input-padding: 8px 16px;
-  --input-label: #666666;
-  --file-background: #ffffff;
-  --file-background-disabled: #fcfcfc;
-  --file-border-color: #dddddd;
-  --file-border-color-focus: #888888;
-  --file-color: #666666;
-  --file-padding: 8px 16px;
-  --file-label: #666666;
-  --file-icon-color: #dddddd;
-  --file-icon-padding: 8px;
-  --search-background: #ffffff;
-  --search-background-disabled: #fcfcfc;
-  --search-border-color: #dddddd;
-  --search-border-color-focus: #888888;
-  --search-color: #666666;
-  --search-padding: 8px 16px;
-  --search-icon-color: #dddddd;
-  --search-icon-padding: 8px;
-  --spinner-color-primary: var(--core-color-primary);
-  --spinner-color-secondary: #dddddd;
-  --spinner-width: 2px;
-  --radio-background: #ffffff;
-  --radio-background-checked: var(--core-color-primary);
-  --radio-border-color: #dddddd;
-  --radio-border-color-focus: #888888;
-  --radio-indicator: #dddddd;
-  --radio-indicator--checked: #ffffff;
-  --radio-label: #666666;
-  --checkbox-background: #ffffff;
-  --checkbox-background-checked: var(--core-color-primary);
-  --checkbox-border-color: #dddddd;
-  --checkbox-border-color-focus: #888888;
-  --checkbox-indicator: #dddddd;
-  --checkbox-indicator--checked: #ffffff;
-  --checkbox-label: #666666;
-  --switch-background: #ffffff;
-  --switch-background-checked: var(--core-color-primary);
-  --switch-border-color: #dddddd;
-  --switch-border-color-focus: #888888;
-  --switch-indicator: #dddddd;
-  --switch-indicator--checked: #ffffff;
-  --switch-label: #666666;
-  --list-primary-background: var(--core-color-primary);
-  --list-label-padding: 16px 0;
-  --list-label-color: #666666;
-  --list-border-color: #dddddd;
-  --spacer-small: 20px;
-  --spacer-medium: 40px;
-  --spacer-large: 60px;
-  --padding-small: 20px;
-  --padding-medium: 40px;
-  --padding-large: 60px;
-}
-
 .spinner {
   border: var(--spinner-width) solid var(--spinner-color-secondary);
   border-top: var(--spinner-width) solid var(--spinner-color-primary);
@@ -268,11 +176,226 @@
   --padding-large: 60px;
 }
 
+.padding {
+  position: relative;
+  padding: 0 var(--padding-small);
+}
+.padding:before, .padding:after {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-family: monospace;
+  font-size: 8px;
+  color: black;
+  width: var(--padding-small);
+  content: "S";
+  opacity: 0;
+}
+.padding:before {
+  left: 0;
+}
+.padding:after {
+  right: 0;
+}
+@media only screen and (min-width: 768px) {
+  .padding {
+    padding: 0 var(--padding-medium);
+  }
+  .padding:before, .padding:after {
+    width: var(--padding-medium);
+    content: "M";
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .padding {
+    padding: 0 var(--padding-large);
+  }
+  .padding:before, .padding:after {
+    width: var(--padding-large);
+    content: "L";
+  }
+}
+.padding.debug:before, .padding.debug:after {
+  opacity: 1;
+  background-color: rgba(0, 255, 255, 0.3);
+}:root {
+  --core-font-family: sans-serif;
+  --core-font-size: 14px;
+  --core-font-size-small: 11px;
+  --core-border-radius: 4px;
+  --core-opacity-disabled: 0.5;
+  --core-color-primary: #3880ff;
+  --core-color-success: #95dcb2;
+  --core-color-error: #db7f93;
+  --core-color-border: #dddddd;
+  --core-padding-error: 8px 0;
+  --button-primary-background: var(--core-color-primary);
+  --button-primary-padding: 8px 16px;
+  --button-primary-color: #ffffff;
+  --button-secondary-background: transparent;
+  --button-secondary-padding: 8px 16px;
+  --button-secondary-color: #666666;
+  --button-minimal-background: transparent;
+  --button-minimal-padding: 8px 16px;
+  --button-minimal-color: #666666;
+  --button-minimal-color-focus: #131313;
+  --input-background: #ffffff;
+  --input-background-disabled: #fcfcfc;
+  --input-border-color: #dddddd;
+  --input-border-color-focus: #888888;
+  --input-color: #666666;
+  --input-padding: 8px 16px;
+  --input-label: #666666;
+  --file-background: #ffffff;
+  --file-background-disabled: #fcfcfc;
+  --file-border-color: #dddddd;
+  --file-border-color-focus: #888888;
+  --file-color: #666666;
+  --file-padding: 8px 16px;
+  --file-label: #666666;
+  --file-icon-color: #dddddd;
+  --file-icon-padding: 8px;
+  --search-background: #ffffff;
+  --search-background-disabled: #fcfcfc;
+  --search-border-color: #dddddd;
+  --search-border-color-focus: #888888;
+  --search-color: #666666;
+  --search-padding: 8px 16px;
+  --search-icon-color: #dddddd;
+  --search-icon-padding: 8px;
+  --spinner-color-primary: var(--core-color-primary);
+  --spinner-color-secondary: #dddddd;
+  --spinner-width: 2px;
+  --radio-background: #ffffff;
+  --radio-background-checked: var(--core-color-primary);
+  --radio-border-color: #dddddd;
+  --radio-border-color-focus: #888888;
+  --radio-indicator: #dddddd;
+  --radio-indicator--checked: #ffffff;
+  --radio-label: #666666;
+  --checkbox-background: #ffffff;
+  --checkbox-background-checked: var(--core-color-primary);
+  --checkbox-border-color: #dddddd;
+  --checkbox-border-color-focus: #888888;
+  --checkbox-indicator: #dddddd;
+  --checkbox-indicator--checked: #ffffff;
+  --checkbox-label: #666666;
+  --switch-background: #ffffff;
+  --switch-background-checked: var(--core-color-primary);
+  --switch-border-color: #dddddd;
+  --switch-border-color-focus: #888888;
+  --switch-indicator: #dddddd;
+  --switch-indicator--checked: #ffffff;
+  --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-label-padding: 16px 0;
+  --list-label-color: #666666;
+  --list-border-color: #dddddd;
+  --spacer-small: 20px;
+  --spacer-medium: 40px;
+  --spacer-large: 60px;
+  --padding-small: 20px;
+  --padding-medium: 40px;
+  --padding-large: 60px;
+}
+
 .list.secondary .list__tab:before {
   background-color: #000000;
 }
 .list.secondary .list__tab > div {
   color: var(--list-label-color);
+}:root {
+  --core-font-family: sans-serif;
+  --core-font-size: 14px;
+  --core-font-size-small: 11px;
+  --core-border-radius: 4px;
+  --core-opacity-disabled: 0.5;
+  --core-color-primary: #3880ff;
+  --core-color-success: #95dcb2;
+  --core-color-error: #db7f93;
+  --core-color-border: #dddddd;
+  --core-padding-error: 8px 0;
+  --button-primary-background: var(--core-color-primary);
+  --button-primary-padding: 8px 16px;
+  --button-primary-color: #ffffff;
+  --button-secondary-background: transparent;
+  --button-secondary-padding: 8px 16px;
+  --button-secondary-color: #666666;
+  --button-minimal-background: transparent;
+  --button-minimal-padding: 8px 16px;
+  --button-minimal-color: #666666;
+  --button-minimal-color-focus: #131313;
+  --input-background: #ffffff;
+  --input-background-disabled: #fcfcfc;
+  --input-border-color: #dddddd;
+  --input-border-color-focus: #888888;
+  --input-color: #666666;
+  --input-padding: 8px 16px;
+  --input-label: #666666;
+  --file-background: #ffffff;
+  --file-background-disabled: #fcfcfc;
+  --file-border-color: #dddddd;
+  --file-border-color-focus: #888888;
+  --file-color: #666666;
+  --file-padding: 8px 16px;
+  --file-label: #666666;
+  --file-icon-color: #dddddd;
+  --file-icon-padding: 8px;
+  --search-background: #ffffff;
+  --search-background-disabled: #fcfcfc;
+  --search-border-color: #dddddd;
+  --search-border-color-focus: #888888;
+  --search-color: #666666;
+  --search-padding: 8px 16px;
+  --search-icon-color: #dddddd;
+  --search-icon-padding: 8px;
+  --spinner-color-primary: var(--core-color-primary);
+  --spinner-color-secondary: #dddddd;
+  --spinner-width: 2px;
+  --radio-background: #ffffff;
+  --radio-background-checked: var(--core-color-primary);
+  --radio-border-color: #dddddd;
+  --radio-border-color-focus: #888888;
+  --radio-indicator: #dddddd;
+  --radio-indicator--checked: #ffffff;
+  --radio-label: #666666;
+  --checkbox-background: #ffffff;
+  --checkbox-background-checked: var(--core-color-primary);
+  --checkbox-border-color: #dddddd;
+  --checkbox-border-color-focus: #888888;
+  --checkbox-indicator: #dddddd;
+  --checkbox-indicator--checked: #ffffff;
+  --checkbox-label: #666666;
+  --switch-background: #ffffff;
+  --switch-background-checked: var(--core-color-primary);
+  --switch-border-color: #dddddd;
+  --switch-border-color-focus: #888888;
+  --switch-indicator: #dddddd;
+  --switch-indicator--checked: #ffffff;
+  --switch-label: #666666;
+  --list-primary-background: var(--core-color-primary);
+  --list-label-padding: 16px 0;
+  --list-label-color: #666666;
+  --list-border-color: #dddddd;
+  --spacer-small: 20px;
+  --spacer-medium: 40px;
+  --spacer-large: 60px;
+  --padding-small: 20px;
+  --padding-medium: 40px;
+  --padding-large: 60px;
+}
+
+.spacer.small {
+  height: var(--spacer-small);
+}
+.spacer.medium {
+  height: var(--spacer-medium);
+}
+.spacer.large {
+  height: var(--spacer-large);
+}
+.spacer.debug {
+  background-color: rgba(0, 255, 255, 0.3);
 }:root {
   --core-font-family: sans-serif;
   --core-font-size: 14px;
@@ -905,129 +1028,6 @@
   --padding-large: 60px;
 }
 
-.padding {
-  position: relative;
-  padding: 0 var(--padding-small);
-}
-.padding:before, .padding:after {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  font-family: monospace;
-  font-size: 8px;
-  color: black;
-  width: var(--padding-small);
-  content: "S";
-  opacity: 0;
-}
-.padding:before {
-  left: 0;
-}
-.padding:after {
-  right: 0;
-}
-@media only screen and (min-width: 768px) {
-  .padding {
-    padding: 0 var(--padding-medium);
-  }
-  .padding:before, .padding:after {
-    width: var(--padding-medium);
-    content: "M";
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .padding {
-    padding: 0 var(--padding-large);
-  }
-  .padding:before, .padding:after {
-    width: var(--padding-large);
-    content: "L";
-  }
-}
-.padding.debug:before, .padding.debug:after {
-  opacity: 1;
-  background-color: rgba(0, 255, 255, 0.3);
-}:root {
-  --core-font-family: sans-serif;
-  --core-font-size: 14px;
-  --core-font-size-small: 11px;
-  --core-border-radius: 4px;
-  --core-opacity-disabled: 0.5;
-  --core-color-primary: #3880ff;
-  --core-color-success: #95dcb2;
-  --core-color-error: #db7f93;
-  --core-color-border: #dddddd;
-  --core-padding-error: 8px 0;
-  --button-primary-background: var(--core-color-primary);
-  --button-primary-padding: 8px 16px;
-  --button-primary-color: #ffffff;
-  --button-secondary-background: transparent;
-  --button-secondary-padding: 8px 16px;
-  --button-secondary-color: #666666;
-  --button-minimal-background: transparent;
-  --button-minimal-padding: 8px 16px;
-  --button-minimal-color: #666666;
-  --button-minimal-color-focus: #131313;
-  --input-background: #ffffff;
-  --input-background-disabled: #fcfcfc;
-  --input-border-color: #dddddd;
-  --input-border-color-focus: #888888;
-  --input-color: #666666;
-  --input-padding: 8px 16px;
-  --input-label: #666666;
-  --file-background: #ffffff;
-  --file-background-disabled: #fcfcfc;
-  --file-border-color: #dddddd;
-  --file-border-color-focus: #888888;
-  --file-color: #666666;
-  --file-padding: 8px 16px;
-  --file-label: #666666;
-  --file-icon-color: #dddddd;
-  --file-icon-padding: 8px;
-  --search-background: #ffffff;
-  --search-background-disabled: #fcfcfc;
-  --search-border-color: #dddddd;
-  --search-border-color-focus: #888888;
-  --search-color: #666666;
-  --search-padding: 8px 16px;
-  --search-icon-color: #dddddd;
-  --search-icon-padding: 8px;
-  --spinner-color-primary: var(--core-color-primary);
-  --spinner-color-secondary: #dddddd;
-  --spinner-width: 2px;
-  --radio-background: #ffffff;
-  --radio-background-checked: var(--core-color-primary);
-  --radio-border-color: #dddddd;
-  --radio-border-color-focus: #888888;
-  --radio-indicator: #dddddd;
-  --radio-indicator--checked: #ffffff;
-  --radio-label: #666666;
-  --checkbox-background: #ffffff;
-  --checkbox-background-checked: var(--core-color-primary);
-  --checkbox-border-color: #dddddd;
-  --checkbox-border-color-focus: #888888;
-  --checkbox-indicator: #dddddd;
-  --checkbox-indicator--checked: #ffffff;
-  --checkbox-label: #666666;
-  --switch-background: #ffffff;
-  --switch-background-checked: var(--core-color-primary);
-  --switch-border-color: #dddddd;
-  --switch-border-color-focus: #888888;
-  --switch-indicator: #dddddd;
-  --switch-indicator--checked: #ffffff;
-  --switch-label: #666666;
-  --list-primary-background: var(--core-color-primary);
-  --list-label-padding: 16px 0;
-  --list-label-color: #666666;
-  --list-border-color: #dddddd;
-  --spacer-small: 20px;
-  --spacer-medium: 40px;
-  --spacer-large: 60px;
-  --padding-small: 20px;
-  --padding-medium: 40px;
-  --padding-large: 60px;
-}
-
 .list {
   font-family: var(--core-font-family);
   font-size: var(--core-font-size);
@@ -1046,6 +1046,7 @@
 .list__label {
   position: relative;
   display: flex;
+  min-height: 30px;
   overflow: hidden;
   padding: var(--list-label-padding);
   padding: 8px 16px;
@@ -1058,6 +1059,8 @@
 .list__tab {
   position: relative;
   display: flex;
+  align-items: center;
+  min-height: 30px;
   overflow: hidden;
   padding: var(--list-label-padding);
   border-top: 1px solid var(--list-border-color);

@@ -20,6 +20,7 @@
     &__label {
         position: relative;
         display: flex;
+        min-height: 30px;
         overflow: hidden;
         padding: var(--list-label-padding);
         padding: 8px 16px;
@@ -34,6 +35,8 @@
     &__tab {
         position: relative;
         display: flex;
+        align-items: center;
+        min-height: 30px;
         overflow: hidden;
         padding: var(--list-label-padding);
         border-top: 1px solid var(--list-border-color);
