@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.0.15
+@version 0.0.16
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -977,7 +977,7 @@ THE SOFTWARE.
           checked: this.state.checked,
           onChange: this.handleChange,
           disabled: !!this.props.disabled
-        }, props))), this.props.label && React__default.createElement("div", {
+        }, props)), React__default.createElement("span", null)), this.props.label && React__default.createElement("div", {
           className: "label"
         }, this.props.label)), this.props.error && React__default.createElement("div", {
           className: "error"
