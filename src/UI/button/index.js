@@ -26,6 +26,7 @@ export class Button extends PureComponent {
         hover: PropTypes.bool,
         disabled: PropTypes.bool,
         active: PropTypes.bool,
+        warning: PropTypes.bool,
     }
 
     static defaultProps = {
@@ -56,6 +57,7 @@ export class Button extends PureComponent {
             primary: !!this.props.primary,
             secondary: !!this.props.secondary,
             minimal: !!this.props.minimal,
+            warning: !!this.props.warning,
             active: this.props.active,
         });
 

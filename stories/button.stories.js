@@ -32,5 +32,6 @@ storiesOf('Button', module)
             disabled={boolean('disabled', false)}
             title={text('title', 'Button')}
             active={boolean('active', false)}
+            warning={boolean('warning', false)}
         />
     ));

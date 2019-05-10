@@ -6,6 +6,10 @@
     border-radius: var(--core-border-radius);
     border: 1px solid transparent;
 
+    &.warning {
+        background-color: var(--core-color-error);
+    }
+
     // this allows more flexibility in the
     // theme colours. Having one main colour
     // that gets tinted is better than having multiple
