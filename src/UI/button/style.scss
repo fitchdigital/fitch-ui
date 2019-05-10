@@ -1,11 +1,8 @@
-@import '../../styles/theme';
 @import '../../styles/mixins/reset-button';
 
 .button {
     @include reset-button;
     display: inline-flex;
-    font-family: var(--core-font-family);
-    font-size: var(--core-font-size);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -14,21 +11,12 @@
     user-select: none;
     transition: all 0.3s ease-in-out;
 
-    * {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
     .label {
         z-index: 1;
 
         p {
             height: 20px;
             line-height: 20px;
-            padding: 0;
-            margin: 0;
         }
 
         svg {

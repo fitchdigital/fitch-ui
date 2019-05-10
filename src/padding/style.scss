@@ -1,5 +1,7 @@
-@import '../styles/theme';
 @import '../styles/mixins/debug';
+
+$core-breakpoint-medium: 768px;
+$core-breakpoint-large: 1024px;
 
 .padding {
     position: relative;
@@ -11,6 +13,9 @@
         top: 0;
         height: 100%;
         @include debug-text;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: var(--padding-small);
         content: 'S';
         opacity: 0;

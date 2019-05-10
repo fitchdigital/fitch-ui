@@ -1,13 +1,12 @@
 @import '../../styles/theme';
 
 .list.secondary {
-    .list__tab {
-        &:before {
-            background-color: #000000;
-        }
 
-        & > div {
-            color: var(--list-label-color);
+    li {
+        &.bg {
+            &:before {
+                background-color: #000000;
+            }
         }
     }
 }

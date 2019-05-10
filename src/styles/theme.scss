@@ -1,10 +1,8 @@
-$core-breakpoint-medium: 768px;
-$core-breakpoint-large: 1024px;
-
 :root {
     // core
     --core-font-family: sans-serif;
-    --core-font-size: 14px;
+    --core-font-weight: 200;
+    --core-font-size: 16px;
     --core-font-size-small: 11px;
     --core-border-radius: 4px;
     --core-opacity-disabled: 0.5;
@@ -97,6 +95,8 @@ $core-breakpoint-large: 1024px;
     --list-label-padding: 8px 16px;
     --list-label-color: #666666;
     --list-border-color: #dddddd;
+    --list-tab-dark: 0.05;
+    --list-tab-light: 0.0125;
 
     // spacer
     --spacer-small: 20px;

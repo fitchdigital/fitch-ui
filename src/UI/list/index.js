@@ -52,7 +52,7 @@ export class List extends PureComponent {
                         delete props.data;
 
                         return (
-                            <li key={key}>
+                            <li key={key} className="bg">
                                 { Component &&
                                     <Component {...props} />
                                 }

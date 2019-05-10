@@ -1,3 +1,5 @@
+export * from './styles/typography.scss';
+export * from './styles/theme.scss';
 export * from './padding';
 export * from './spacer';
 export * from './spinner';
