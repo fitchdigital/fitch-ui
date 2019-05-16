@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.1.3
+@version 0.1.5
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -1109,7 +1109,7 @@ THE SOFTWARE.
             disabled: !!this.props.disabled,
             checked: this.state.checked
           });
-          var props = excludeFactoryProps(['checked', 'disabled', 'focus', 'label', 'onChange', 'type'], this.props);
+          var props = excludeFactoryProps(['checked', 'disabled', 'focus', 'label', 'onChange', 'type', 'name'], this.props);
           return React__default.createElement("div", {
             className: classes
           }, React__default.createElement("label", null, React__default.createElement("div", {

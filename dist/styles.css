@@ -230,17 +230,6 @@ p {
 p.small {
   font-size: 0.875rem;
   font-weight: 200;
-}.spacer.small {
-  height: var(--spacer-small);
-}
-.spacer.medium {
-  height: var(--spacer-medium);
-}
-.spacer.large {
-  height: var(--spacer-large);
-}
-.spacer.debug {
-  background-color: rgba(0, 255, 255, 0.3);
 }.spinner {
   border: var(--spinner-width) solid var(--spinner-color-secondary);
   border-top: var(--spinner-width) solid var(--spinner-color-primary);
@@ -431,6 +420,17 @@ p.small {
 .padding.debug:before, .padding.debug:after {
   opacity: 1;
   background-color: rgba(0, 255, 255, 0.3);
+}.spacer.small {
+  height: var(--spacer-small);
+}
+.spacer.medium {
+  height: var(--spacer-medium);
+}
+.spacer.large {
+  height: var(--spacer-large);
+}
+.spacer.debug {
+  background-color: rgba(0, 255, 255, 0.3);
 }.list ul {
   list-style-type: none;
   margin: 0;
@@ -593,6 +593,68 @@ p.small {
 }
 .checkbox.checked .element svg {
   fill: var(--checkbox-indicator--checked);
+}.radio label {
+  display: flex;
+  align-items: center;
+}
+.radio .element {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  background-color: var(--radio-background);
+  border: 1px solid var(--radio-border-color);
+  border-radius: 50%;
+}
+.radio .element input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio .element input:focus {
+  outline: none;
+}
+.radio .element span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: transparent;
+}
+.radio .label {
+  margin-left: 0.5rem;
+  color: var(--radio-label);
+}
+.radio .error {
+  font-size: var(--core-font-size-small);
+  margin-bottom: 0.5rem;
+  color: var(--core-color-error);
+  padding: var(--core-padding-error);
+}
+.radio.focus .element, .radio:focus-within .element, .radio:hover .element {
+  border: 1px solid var(--radio-border-color-focus);
+}
+.radio.disabled {
+  pointer-events: none;
+}
+.radio.disabled .element {
+  opacity: var(--core-opacity-disabled);
+}
+.radio.checked .element {
+  background-color: var(--radio-background-checked);
+  border: 1px solid transparent;
+}
+.radio.checked .element span {
+  background-color: var(--radio-indicator--checked);
 }.input-file .element {
   position: relative;
   background-color: var(--file-background);
@@ -652,6 +714,70 @@ p.small {
 }
 .input-file.disabled .element {
   opacity: var(--core-opacity-disabled);
+}.switch label {
+  display: flex;
+  align-items: center;
+}
+.switch .element {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  min-width: 44px;
+  max-width: 44px;
+  min-height: 24px;
+  max-height: 24px;
+  background-color: var(--switch-background);
+  border: 1px solid var(--switch-border-color);
+  border-radius: 16px;
+}
+.switch .element input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.switch .element input:focus {
+  outline: none;
+}
+.switch .element span {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--switch-indicator);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: left 0.2s ease-in-out;
+}
+.switch .label {
+  margin-left: 0.5rem;
+  color: var(--switch-label);
+}
+.switch .error {
+  font-size: var(--core-font-size-small);
+  margin-bottom: 0.5rem;
+  color: var(--core-color-error);
+  padding: var(--core-padding-error);
+}
+.switch.focus .element, .switch:focus-within .element, .switch:hover .element {
+  border: 1px solid var(--switch-border-color-focus);
+}
+.switch.disabled {
+  pointer-events: none;
+}
+.switch.disabled .element {
+  opacity: var(--core-opacity-disabled);
+}
+.switch.checked .element {
+  background-color: var(--switch-background-checked);
+  border: 1px solid transparent;
+}
+.switch.checked .element span {
+  left: calc(100% - 16px - 4px);
+  background-color: var(--switch-indicator--checked);
 }.input-text .element {
   position: relative;
   background-color: var(--input-background);
@@ -896,132 +1022,6 @@ p.small {
 }
 .list.primary li:nth-child(odd) .list__tab > div {
   color: white;
-}.radio label {
-  display: flex;
-  align-items: center;
-}
-.radio .element {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  max-width: 16px;
-  min-height: 16px;
-  max-height: 16px;
-  background-color: var(--radio-background);
-  border: 1px solid var(--radio-border-color);
-  border-radius: 50%;
-}
-.radio .element input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.radio .element input:focus {
-  outline: none;
-}
-.radio .element span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  pointer-events: none;
-  background-color: transparent;
-}
-.radio .label {
-  margin-left: 0.5rem;
-  color: var(--radio-label);
-}
-.radio .error {
-  font-size: var(--core-font-size-small);
-  margin-bottom: 0.5rem;
-  color: var(--core-color-error);
-  padding: var(--core-padding-error);
-}
-.radio.focus .element, .radio:focus-within .element, .radio:hover .element {
-  border: 1px solid var(--radio-border-color-focus);
-}
-.radio.disabled {
-  pointer-events: none;
-}
-.radio.disabled .element {
-  opacity: var(--core-opacity-disabled);
-}
-.radio.checked .element {
-  background-color: var(--radio-background-checked);
-  border: 1px solid transparent;
-}
-.radio.checked .element span {
-  background-color: var(--radio-indicator--checked);
-}.switch label {
-  display: flex;
-  align-items: center;
-}
-.switch .element {
-  position: relative;
-  width: 44px;
-  height: 24px;
-  min-width: 44px;
-  max-width: 44px;
-  min-height: 24px;
-  max-height: 24px;
-  background-color: var(--switch-background);
-  border: 1px solid var(--switch-border-color);
-  border-radius: 16px;
-}
-.switch .element input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.switch .element input:focus {
-  outline: none;
-}
-.switch .element span {
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--switch-indicator);
-  transform: translateY(-50%);
-  pointer-events: none;
-  transition: left 0.2s ease-in-out;
-}
-.switch .label {
-  margin-left: 0.5rem;
-  color: var(--switch-label);
-}
-.switch .error {
-  font-size: var(--core-font-size-small);
-  margin-bottom: 0.5rem;
-  color: var(--core-color-error);
-  padding: var(--core-padding-error);
-}
-.switch.focus .element, .switch:focus-within .element, .switch:hover .element {
-  border: 1px solid var(--switch-border-color-focus);
-}
-.switch.disabled {
-  pointer-events: none;
-}
-.switch.disabled .element {
-  opacity: var(--core-opacity-disabled);
-}
-.switch.checked .element {
-  background-color: var(--switch-background-checked);
-  border: 1px solid transparent;
-}
-.switch.checked .element span {
-  left: calc(100% - 16px - 4px);
-  background-color: var(--switch-indicator--checked);
 }:root {
   --core-font-family: sans-serif;
   --core-font-weight: 200;
