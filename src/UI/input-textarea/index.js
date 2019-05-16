@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { Spinner } from '../../spinner';
-import IconEye from '../../svg/icon-eye';
-import IconEyeOff from '../../svg/icon-eye-off';
 import IconCheckmark from '../../svg/icon-checkmark';
 import IconMdClose from '../../svg/icon-close';
 import { excludeFactoryProps } from '../../utils';
 import './style.scss';
 
-export class InputText extends PureComponent {
+export class InputTextArea extends PureComponent {
 
     static propTypes = {
         defaultValue: PropTypes.oneOf([
@@ -35,19 +33,8 @@ export class InputText extends PureComponent {
         field: PropTypes.object,
     };
 
-    static defaultProps = {
-        type: 'text',
-    };
-
     state = {
         valid: null,
-        showPassword: false,
-    };
-
-    togglePasswordType = () => {
-        this.setState(prevState => ({
-            showPassword: !prevState.showPassword,
-        }));
     };
 
     handleChange = (e) => {
@@ -55,7 +42,6 @@ export class InputText extends PureComponent {
 
         // validation just happens on non passwords
         if (
-            !this.props.password &&
             this.props.validate) {
             const valid = this.props.validate(value);
             this.setState({
@@ -66,23 +52,16 @@ export class InputText extends PureComponent {
         if (this.props.onChange) {
             this.props.onChange(e);
         }
-    }
+    };
 
     render() {
         const classes = classNames({
-            'input-text': true,
-            password: !!this.props.password,
+            'input-textarea': true,
             focus: !!this.props.focus,
             disabled: !!this.props.disabled,
             success: this.state.valid === true || !!this.props.success,
             error: this.state.valid === false || !!this.props.error,
         });
-
-        // if field is password, toggle visibility
-        let type = this.props.type;
-        if (this.props.password && !this.state.showPassword) {
-            type = 'password';
-        }
 
         const props = excludeFactoryProps([
             'defaultValue',
@@ -95,7 +74,6 @@ export class InputText extends PureComponent {
             'placeholder',
             'progress',
             'success',
-            'type',
             'field',
         ], this.props);
         const { field } = this.props;
@@ -109,8 +87,7 @@ export class InputText extends PureComponent {
                     }
 
                     <div className="element">
-                        <input
-                            type={type}
+                        <textarea
                             placeholder={this.props.placeholder}
                             defaultValue={this.props.defaultValue}
                             disabled={!!this.props.disabled}
@@ -120,13 +97,6 @@ export class InputText extends PureComponent {
                         />
 
                         <div className="icon">
-                            {this.props.password && this.state.showPassword &&
-                            <IconEyeOff onClick={this.togglePasswordType} />
-                            }
-
-                            {this.props.password && !this.state.showPassword &&
-                            <IconEye onClick={this.togglePasswordType} />
-                            }
 
                             {!this.props.password &&
                             <>

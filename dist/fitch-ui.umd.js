@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.1.2
+@version 0.1.3
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -807,13 +807,106 @@ THE SOFTWARE.
       placeholder: PropTypes.string,
       progress: PropTypes.bool,
       success: PropTypes.bool,
-      type: PropTypes.oneOf(['text', 'number']),
+      type: PropTypes.oneOf(['text', 'number', 'textarea']),
       validate: PropTypes.func,
       field: PropTypes.object
     });
 
     _defineProperty(InputText, "defaultProps", {
       type: 'text'
+    });
+
+    ___$insertStyle(":root {\n  --core-font-family: sans-serif;\n  --core-font-weight: 200;\n  --core-font-size: 16px;\n  --core-font-size-small: 11px;\n  --core-border-radius: 4px;\n  --core-opacity-disabled: 0.5;\n  --core-color-primary: #3880ff;\n  --core-color-success: #95dcb2;\n  --core-color-error: #e82c55;\n  --core-color-border: #dddddd;\n  --core-padding-error: 8px 0;\n  --button-primary-background: var(--core-color-primary);\n  --button-primary-padding: 8px 16px;\n  --button-primary-color: #ffffff;\n  --button-secondary-background: transparent;\n  --button-secondary-padding: 8px 16px;\n  --button-secondary-color: #666666;\n  --button-minimal-background: transparent;\n  --button-minimal-padding: 8px 16px;\n  --button-minimal-color: #666666;\n  --button-minimal-color-focus: #131313;\n  --input-background: #ffffff;\n  --input-background-disabled: #fcfcfc;\n  --input-border-color: #dddddd;\n  --input-border-color-focus: #888888;\n  --input-color: #666666;\n  --input-padding: 8px 16px;\n  --input-label: #666666;\n  --file-background: #ffffff;\n  --file-background-disabled: #fcfcfc;\n  --file-border-color: #dddddd;\n  --file-border-color-focus: #888888;\n  --file-color: #666666;\n  --file-padding: 8px 16px;\n  --file-label: #666666;\n  --file-icon-color: #dddddd;\n  --file-icon-padding: 8px;\n  --search-background: #ffffff;\n  --search-background-disabled: #fcfcfc;\n  --search-border-color: #dddddd;\n  --search-border-color-focus: #888888;\n  --search-color: #666666;\n  --search-padding: 8px 16px;\n  --search-icon-color: #dddddd;\n  --search-icon-padding: 8px;\n  --spinner-color-primary: var(--core-color-primary);\n  --spinner-color-secondary: #dddddd;\n  --spinner-width: 2px;\n  --radio-background: #ffffff;\n  --radio-background-checked: var(--core-color-primary);\n  --radio-border-color: #dddddd;\n  --radio-border-color-focus: #888888;\n  --radio-indicator: #dddddd;\n  --radio-indicator--checked: #ffffff;\n  --radio-label: #666666;\n  --checkbox-background: #ffffff;\n  --checkbox-background-checked: var(--core-color-primary);\n  --checkbox-border-color: #dddddd;\n  --checkbox-border-color-focus: #888888;\n  --checkbox-indicator: #dddddd;\n  --checkbox-indicator--checked: #ffffff;\n  --checkbox-label: #666666;\n  --switch-background: #ffffff;\n  --switch-background-checked: var(--core-color-primary);\n  --switch-border-color: #dddddd;\n  --switch-border-color-focus: #888888;\n  --switch-indicator: #dddddd;\n  --switch-indicator--checked: #ffffff;\n  --switch-label: #666666;\n  --list-primary-background: var(--core-color-primary);\n  --list-label-padding: 8px 16px;\n  --list-label-color: #666666;\n  --list-border-color: #dddddd;\n  --list-tab-dark: 0.05;\n  --list-tab-light: 0.0125;\n  --spacer-small: 20px;\n  --spacer-medium: 40px;\n  --spacer-large: 60px;\n  --padding-small: 20px;\n  --padding-medium: 40px;\n  --padding-large: 60px;\n}\n\n.input-textarea .element {\n  position: relative;\n  background-color: var(--input-background);\n  border: 1px solid var(--input-border-color);\n  border-radius: var(--core-border-radius);\n  padding: var(--input-padding);\n  color: var(--input-color);\n}\n.input-textarea .element textarea {\n  font-family: var(--core-font-family);\n  width: calc(100% - 16px);\n  height: 20px;\n  border: 0;\n  padding: 0;\n  background-color: transparent;\n}\n.input-textarea .element textarea:focus {\n  outline: none;\n}\n.input-textarea .element textarea::placeholder {\n  color: var(--input-border-color);\n}\n.input-textarea .element .icon {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  width: 16px;\n  height: 16px;\n  transform: translateX(-50%) translateY(-50%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.input-textarea .element .icon svg {\n  width: 100%;\n}\n.input-textarea .label {\n  font-family: var(--core-font-family);\n  margin-bottom: 0.5rem;\n  color: var(--input-label);\n}\n.input-textarea .error {\n  font-family: var(--core-font-family);\n  font-size: 11px;\n  margin-bottom: 0.5rem;\n  color: var(--core-color-error);\n  padding: var(--core-padding-error);\n}\n.input-textarea.focus .element, .input-textarea:focus-within .element {\n  border: 1px solid var(--input-border-color-focus);\n}\n.input-textarea.disabled {\n  pointer-events: none;\n}\n.input-textarea.disabled .element {\n  opacity: var(--core-opacity-disabled);\n}\n.input-textarea.success .element .icon {\n  fill: var(--core-color-success);\n}\n.input-textarea.error .element .icon {\n  fill: var(--core-color-error);\n}");
+
+    var InputTextArea =
+    /*#__PURE__*/
+    function (_PureComponent) {
+      _inherits(InputTextArea, _PureComponent);
+
+      function InputTextArea() {
+        var _getPrototypeOf2;
+
+        var _this;
+
+        _classCallCheck(this, InputTextArea);
+
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(InputTextArea)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+        _defineProperty(_assertThisInitialized(_this), "state", {
+          valid: null
+        });
+
+        _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+          var value = e.target.value; // validation just happens on non passwords
+
+          if (_this.props.validate) {
+            var valid = _this.props.validate(value);
+
+            _this.setState({
+              valid: value.length > 0 ? valid : null
+            });
+          }
+
+          if (_this.props.onChange) {
+            _this.props.onChange(e);
+          }
+        });
+
+        return _this;
+      }
+
+      _createClass(InputTextArea, [{
+        key: "render",
+        value: function render() {
+          var classes = classNames({
+            'input-textarea': true,
+            focus: !!this.props.focus,
+            disabled: !!this.props.disabled,
+            success: this.state.valid === true || !!this.props.success,
+            error: this.state.valid === false || !!this.props.error
+          });
+          var props = excludeFactoryProps(['defaultValue', 'disabled', 'error', 'focus', 'label', 'onChange', 'password', 'placeholder', 'progress', 'success', 'field'], this.props);
+          var field = this.props.field;
+          return React__default.createElement("div", {
+            className: classes
+          }, React__default.createElement("label", null, this.props.label && React__default.createElement("div", {
+            className: "label"
+          }, this.props.label), React__default.createElement("div", {
+            className: "element"
+          }, React__default.createElement("textarea", _extends({
+            placeholder: this.props.placeholder,
+            defaultValue: this.props.defaultValue,
+            disabled: !!this.props.disabled,
+            onChange: this.handleChange
+          }, props, field)), React__default.createElement("div", {
+            className: "icon"
+          }, !this.props.password && React__default.createElement(React__default.Fragment, null, (this.state.valid === true || this.props.success) && React__default.createElement(IconCheckmark, null), (this.state.valid === false || this.props.error) && React__default.createElement(IconMdClose, null), this.props.progress && React__default.createElement(Spinner, null)))), this.props.error && React__default.createElement("div", {
+            className: "error"
+          }, this.props.error)));
+        }
+      }]);
+
+      return InputTextArea;
+    }(React.PureComponent);
+
+    _defineProperty(InputTextArea, "propTypes", {
+      defaultValue: PropTypes.oneOf(['text', 'number']),
+      disabled: PropTypes.bool,
+      error: PropTypes.string,
+      focus: PropTypes.bool,
+      label: PropTypes.string,
+      onChange: PropTypes.func,
+      password: PropTypes.bool,
+      placeholder: PropTypes.string,
+      progress: PropTypes.bool,
+      success: PropTypes.bool,
+      type: PropTypes.oneOf(['text', 'number', 'textarea']),
+      validate: PropTypes.func,
+      field: PropTypes.object
     });
 
     ___$insertStyle(".list ul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n.list ul li {\n  position: relative;\n  list-style-position: inside;\n}\n.list .bg:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: var(--list-tab-light);\n}\n.list__label {\n  position: relative;\n  display: flex;\n  align-items: center;\n  min-height: 40px;\n  overflow: hidden;\n  padding: var(--list-label-padding);\n}\n.list__label > div {\n  flex: 1;\n  color: var(--list-label-color);\n  text-transform: capitalize;\n}\n.list__tab {\n  position: relative;\n  display: flex;\n  align-items: center;\n  min-height: 50px;\n  overflow: hidden;\n  padding: var(--list-label-padding);\n  border-top: 1px solid var(--list-border-color);\n}\n.list__tab > div {\n  position: relative;\n  flex: 1;\n  color: var(--list-label-color);\n}\n.list li:nth-child(odd).bg:before {\n  opacity: var(--list-tab-dark);\n}");
@@ -1051,6 +1144,7 @@ THE SOFTWARE.
     exports.InputFile = InputFile;
     exports.InputSearch = InputSearch;
     exports.InputText = InputText;
+    exports.InputTextArea = InputTextArea;
     exports.List = List;
     exports.Padding = Padding;
     exports.Radio = Radio;

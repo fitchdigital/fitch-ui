@@ -8,6 +8,7 @@ export * from './UI/checkbox';
 export * from './UI/input-file';
 export * from './UI/input-search';
 export * from './UI/input-text';
+export * from './UI/input-textarea';
 export * from './UI/list';
 export * from './UI/radio';
 export * from './UI/switch';
