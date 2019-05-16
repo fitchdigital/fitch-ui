@@ -1,14 +1,14 @@
-$core-breakpoint-medium: 768px;
-$core-breakpoint-large: 1024px;
-
 :root {
     // core
     --core-font-family: sans-serif;
+    --core-font-weight: 200;
+    --core-font-size: 16px;
+    --core-font-size-small: 11px;
     --core-border-radius: 4px;
     --core-opacity-disabled: 0.5;
     --core-color-primary: #3880ff; // blue
     --core-color-success: #95dcb2; // green
-    --core-color-error: #db7f93; // red
+    --core-color-error: #e82c55; // red
     --core-color-border: #dddddd; // grey
     --core-padding-error: 8px 0;
 
@@ -89,6 +89,14 @@ $core-breakpoint-large: 1024px;
     --switch-indicator: #dddddd;
     --switch-indicator--checked: #ffffff;
     --switch-label: #666666;
+
+    // lists
+    --list-primary-background: var(--core-color-primary);
+    --list-label-padding: 8px 16px;
+    --list-label-color: #666666;
+    --list-border-color: #dddddd;
+    --list-tab-dark: 0.05;
+    --list-tab-light: 0.0125;
 
     // spacer
     --spacer-small: 20px;

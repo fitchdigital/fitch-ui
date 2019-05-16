@@ -1,0 +1,12 @@
+@import '../../styles/theme';
+
+.list.secondary {
+
+    li {
+        &.bg {
+            &:before {
+                background-color: #000000;
+            }
+        }
+    }
+}

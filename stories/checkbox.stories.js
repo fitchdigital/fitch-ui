@@ -9,10 +9,10 @@ storiesOf('Checkbox', module)
     .addDecorator(withKnobs)
     .addDecorator(withInfo)
     .add('default', () => (
-        <Checkbox />
+        <Checkbox label="Label" />
     ))
     .add('default with error', () => (
-        <Checkbox error="this field is required" />
+        <Checkbox label="Label" error="this field is required" />
     ))
     .add('interactive', () => (
         <Checkbox

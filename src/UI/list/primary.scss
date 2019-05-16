@@ -1,0 +1,29 @@
+@import '../../styles/theme';
+
+.list.primary {
+
+    .list__tab {
+        border-top: none;
+
+        & > div {
+            color: var(--list-label-color);
+        }
+    }
+
+    li {
+        &:nth-child(odd) {
+            &.bg {
+                &:before {
+                    background-color: var(--core-color-primary);
+                    opacity: 1;
+                }
+            }
+
+            .list__tab {
+                & > div {
+                    color: white;
+                }
+            }
+        }
+    }
+}

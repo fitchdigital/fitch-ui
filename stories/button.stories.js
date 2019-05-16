@@ -26,17 +26,12 @@ storiesOf('Button', module)
             minimal
         />
     ))
-    .add('react-router-dom', () => (
-        <Button
-            title="Minimal"
-            to="/"
-            primary
-        />
-    ))
     .add('interactive', () => (
         <Button
             primary
             disabled={boolean('disabled', false)}
             title={text('title', 'Button')}
+            active={boolean('active', false)}
+            warning={boolean('warning', false)}
         />
     ));

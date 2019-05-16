@@ -9,10 +9,10 @@ storiesOf('Switch', module)
     .addDecorator(withKnobs)
     .addDecorator(withInfo)
     .add('default', () => (
-        <Switch />
+        <Switch label="Label" />
     ))
     .add('default with error', () => (
-        <Switch error="this field is required" />
+        <Switch label="Label" error="this field is required" />
     ))
     .add('interactive', () => (
         <Switch

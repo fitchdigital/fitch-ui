@@ -1,0 +1,70 @@
+@import './theme';
+
+html,
+body {
+    font-family: var(--core-font-family);
+    font-weight: var(--core-font-weight);
+    font-size: var(--core-font-size);
+    color: #454545;
+}
+
+*,
+*:before,
+*:after {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: var(--core-font-family);
+    font-weight: var(--core-font-weight);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.875rem;
+    font-weight: 800;
+    line-height: 3rem;
+}
+
+h2 {
+    font-size: 2.125rem;
+    font-weight: 800;
+    line-height: 2.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 200;
+
+    &.small {
+        font-size: 0.875rem;
+        font-weight: 200;
+    }
+}

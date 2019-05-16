@@ -14,3 +14,20 @@ export const excludeFactoryProps = (excludes, factory) => {
 
     return values;
 };
+
+// extracts all unique keys from an array of objects that might have all keys
+// or some might have different keys. used in the lists to generate LABELS
+export const extractAllUniquePropsFromArrayObjects = (data, key) => {
+    const keys = [];
+    for (let i = 0; i < data.length; i++) {
+        const deep = data[i][key];
+        const p = Object.keys(deep || {});
+        for (let j = 0; j < p.length; j++) {
+            if (!keys.includes(p[j])) {
+                keys.push(p[j]);
+            }
+        }
+    }
+
+    return keys;
+};
