@@ -45,6 +45,7 @@ export class Switch extends PureComponent {
             'label',
             'onChange',
             'type',
+            'name'
         ], this.props);
 
         return (
