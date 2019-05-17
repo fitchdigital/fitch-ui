@@ -431,53 +431,6 @@ p.small {
 .padding.debug:before, .padding.debug:after {
   opacity: 1;
   background-color: rgba(0, 255, 255, 0.3);
-}.list ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.list ul li {
-  position: relative;
-  list-style-position: inside;
-}
-.list .bg:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: var(--list-tab-light);
-}
-.list__label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 40px;
-  overflow: hidden;
-  padding: var(--list-label-padding);
-}
-.list__label > div {
-  flex: 1;
-  color: var(--list-label-color);
-  text-transform: capitalize;
-}
-.list__tab {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  overflow: hidden;
-  padding: var(--list-label-padding);
-  border-top: 1px solid var(--list-border-color);
-}
-.list__tab > div {
-  position: relative;
-  flex: 1;
-  color: var(--list-label-color);
-}
-.list li:nth-child(odd).bg:before {
-  opacity: var(--list-tab-dark);
 }.input-search {
   position: relative;
   background-color: var(--search-background);
@@ -714,6 +667,179 @@ p.small {
 }
 .input-text.password .element .icon {
   fill: var(--input-color);
+}.list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list ul li {
+  position: relative;
+  list-style-position: inside;
+}
+.list .bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: var(--list-tab-light);
+}
+.list__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  overflow: hidden;
+  padding: var(--list-label-padding);
+}
+.list__label > div {
+  flex: 1;
+  color: var(--list-label-color);
+  text-transform: capitalize;
+}
+.list__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  overflow: hidden;
+  padding: var(--list-label-padding);
+  border-top: 1px solid var(--list-border-color);
+}
+.list__tab > div {
+  position: relative;
+  flex: 1;
+  color: var(--list-label-color);
+}
+.list li:nth-child(odd).bg:before {
+  opacity: var(--list-tab-dark);
+}.radio label {
+  display: flex;
+  align-items: center;
+}
+.radio .element {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  background-color: var(--radio-background);
+  border: 1px solid var(--radio-border-color);
+  border-radius: 50%;
+}
+.radio .element input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio .element input:focus {
+  outline: none;
+}
+.radio .element span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: transparent;
+}
+.radio .label {
+  margin-left: 0.5rem;
+  color: var(--radio-label);
+}
+.radio .error {
+  font-size: var(--core-font-size-small);
+  margin-bottom: 0.5rem;
+  color: var(--core-color-error);
+  padding: var(--core-padding-error);
+}
+.radio.focus .element, .radio:focus-within .element, .radio:hover .element {
+  border: 1px solid var(--radio-border-color-focus);
+}
+.radio.disabled {
+  pointer-events: none;
+}
+.radio.disabled .element {
+  opacity: var(--core-opacity-disabled);
+}
+.radio.checked .element {
+  background-color: var(--radio-background-checked);
+  border: 1px solid transparent;
+}
+.radio.checked .element span {
+  background-color: var(--radio-indicator--checked);
+}.switch label {
+  display: flex;
+  align-items: center;
+}
+.switch .element {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  min-width: 44px;
+  max-width: 44px;
+  min-height: 24px;
+  max-height: 24px;
+  background-color: var(--switch-background);
+  border: 1px solid var(--switch-border-color);
+  border-radius: 16px;
+}
+.switch .element input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.switch .element input:focus {
+  outline: none;
+}
+.switch .element span {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--switch-indicator);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: left 0.2s ease-in-out;
+}
+.switch .label {
+  margin-left: 0.5rem;
+  color: var(--switch-label);
+}
+.switch .error {
+  font-size: var(--core-font-size-small);
+  margin-bottom: 0.5rem;
+  color: var(--core-color-error);
+  padding: var(--core-padding-error);
+}
+.switch.focus .element, .switch:focus-within .element, .switch:hover .element {
+  border: 1px solid var(--switch-border-color-focus);
+}
+.switch.disabled {
+  pointer-events: none;
+}
+.switch.disabled .element {
+  opacity: var(--core-opacity-disabled);
+}
+.switch.checked .element {
+  background-color: var(--switch-background-checked);
+  border: 1px solid transparent;
+}
+.switch.checked .element span {
+  left: calc(100% - 16px - 4px);
+  background-color: var(--switch-indicator--checked);
 }:root {
   --core-font-family: sans-serif;
   --core-font-weight: 200;
@@ -1043,130 +1169,4 @@ p.small {
 }
 .input-textarea.error .element .icon {
   fill: var(--core-color-error);
-}.radio label {
-  display: flex;
-  align-items: center;
-}
-.radio .element {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  max-width: 16px;
-  min-height: 16px;
-  max-height: 16px;
-  background-color: var(--radio-background);
-  border: 1px solid var(--radio-border-color);
-  border-radius: 50%;
-}
-.radio .element input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.radio .element input:focus {
-  outline: none;
-}
-.radio .element span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  pointer-events: none;
-  background-color: transparent;
-}
-.radio .label {
-  margin-left: 0.5rem;
-  color: var(--radio-label);
-}
-.radio .error {
-  font-size: var(--core-font-size-small);
-  margin-bottom: 0.5rem;
-  color: var(--core-color-error);
-  padding: var(--core-padding-error);
-}
-.radio.focus .element, .radio:focus-within .element, .radio:hover .element {
-  border: 1px solid var(--radio-border-color-focus);
-}
-.radio.disabled {
-  pointer-events: none;
-}
-.radio.disabled .element {
-  opacity: var(--core-opacity-disabled);
-}
-.radio.checked .element {
-  background-color: var(--radio-background-checked);
-  border: 1px solid transparent;
-}
-.radio.checked .element span {
-  background-color: var(--radio-indicator--checked);
-}.switch label {
-  display: flex;
-  align-items: center;
-}
-.switch .element {
-  position: relative;
-  width: 44px;
-  height: 24px;
-  min-width: 44px;
-  max-width: 44px;
-  min-height: 24px;
-  max-height: 24px;
-  background-color: var(--switch-background);
-  border: 1px solid var(--switch-border-color);
-  border-radius: 16px;
-}
-.switch .element input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-.switch .element input:focus {
-  outline: none;
-}
-.switch .element span {
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--switch-indicator);
-  transform: translateY(-50%);
-  pointer-events: none;
-  transition: left 0.2s ease-in-out;
-}
-.switch .label {
-  margin-left: 0.5rem;
-  color: var(--switch-label);
-}
-.switch .error {
-  font-size: var(--core-font-size-small);
-  margin-bottom: 0.5rem;
-  color: var(--core-color-error);
-  padding: var(--core-padding-error);
-}
-.switch.focus .element, .switch:focus-within .element, .switch:hover .element {
-  border: 1px solid var(--switch-border-color-focus);
-}
-.switch.disabled {
-  pointer-events: none;
-}
-.switch.disabled .element {
-  opacity: var(--core-opacity-disabled);
-}
-.switch.checked .element {
-  background-color: var(--switch-background-checked);
-  border: 1px solid transparent;
-}
-.switch.checked .element span {
-  left: calc(100% - 16px - 4px);
-  background-color: var(--switch-indicator--checked);
 }
