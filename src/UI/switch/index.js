@@ -14,6 +14,7 @@ export class Switch extends PureComponent {
         label: PropTypes.string,
         onChange: PropTypes.func,
         error: PropTypes.string,
+        name: PropTypes.string,
     }
 
     state = {
@@ -45,33 +46,35 @@ export class Switch extends PureComponent {
             'label',
             'onChange',
             'type',
-            'name'
         ], this.props);
-
+        const { field } = this.props;
+        const { name } = field;
         return (
             <div className={classes}>
                 <label>
                     <div className="element">
                         <input
+                            name={name}
                             type="checkbox"
                             checked={this.state.checked}
                             onChange={this.handleChange}
                             disabled={!!this.props.disabled}
                             {...props}
+                            name={name}
                         />
                         <span />
                     </div>
-                    { this.props.label &&
-                        <div className="label">
-                            {this.props.label}
-                        </div>
+                    {this.props.label &&
+                    <div className="label">
+                        {this.props.label}
+                    </div>
                     }
                 </label>
 
-                { this.props.error &&
-                    <div className="error">
-                        {this.props.error}
-                    </div>
+                {this.props.error &&
+                <div className="error">
+                    {this.props.error}
+                </div>
                 }
             </div>
         );

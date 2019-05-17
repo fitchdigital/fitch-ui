@@ -2,7 +2,7 @@
 /*!
 @fileoverview @fitch-digital/fitch-ui
 @author FITCH DIGITAL
-@version 0.1.5
+@version 0.1.6
 
 Copyright (c) 2018-2019, FITCH DIGITAL.
 
@@ -1109,17 +1109,22 @@ THE SOFTWARE.
             disabled: !!this.props.disabled,
             checked: this.state.checked
           });
-          var props = excludeFactoryProps(['checked', 'disabled', 'focus', 'label', 'onChange', 'type', 'name'], this.props);
+          var props = excludeFactoryProps(['checked', 'disabled', 'focus', 'label', 'onChange', 'type'], this.props);
+          var field = this.props.field;
+          var name = field.name;
           return React__default.createElement("div", {
             className: classes
           }, React__default.createElement("label", null, React__default.createElement("div", {
             className: "element"
           }, React__default.createElement("input", _extends({
+            name: name,
             type: "checkbox",
             checked: this.state.checked,
             onChange: this.handleChange,
             disabled: !!this.props.disabled
-          }, props)), React__default.createElement("span", null)), this.props.label && React__default.createElement("div", {
+          }, props, {
+            name: name
+          })), React__default.createElement("span", null)), this.props.label && React__default.createElement("div", {
             className: "label"
           }, this.props.label)), this.props.error && React__default.createElement("div", {
             className: "error"
@@ -1136,7 +1141,8 @@ THE SOFTWARE.
       focus: PropTypes.bool,
       label: PropTypes.string,
       onChange: PropTypes.func,
-      error: PropTypes.string
+      error: PropTypes.string,
+      name: PropTypes.string
     });
 
     exports.Button = Button;
